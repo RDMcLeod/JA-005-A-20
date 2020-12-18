@@ -1,2 +1,2 @@
-# JA-005-A-20
-Java Maze Project
+# JA-002-A-20
+Matrices - Two-dimensional arrays
