@@ -1,5 +1,8 @@
-document.getElementById("button").onclick = function () {
-  document.getElementById("confirm").innerHTML =
-    "Order placed. Check email for confirmation";
-  document.getElementById("bitton").style.display = "none";
-};
+var age = 50;
+var newAge = age;
+
+var message = "newAge =" + newAge; //"newAge = 50"
+console.log(message);
+
+//Declaration
+//initialization
