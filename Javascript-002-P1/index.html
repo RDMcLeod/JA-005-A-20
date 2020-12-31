@@ -13,12 +13,38 @@
         <a id="addBtn">+</a>
       </div>
     </nav>
-    <nav>
-      <h1>Hello from Navbar</h1>
-    </nav>
 
     <div class="container">
-      <div class="panel" id="addLinkPanel"></div>
+      <div class="panel" id="addLinkPanel">
+        <h3 class="panel-heading">Add Link</h3>
+        <form id="addLinkform">
+          <input
+            type="text"
+            name="title"
+            id="linkTitle"
+            class="form-control"
+            placeholder="Title"
+          />
+          <input
+            type="text"
+            name="url"
+            id="linkUrl"
+            class="form-control"
+            placeholder="Url"
+          />
+          <input
+            type="text"
+            name="category"
+            id="linkCategory"
+            class="form-control"
+            placeholder="Catagories (comma separated)"
+          />
+          <div id="addCategories"></div>
+
+          <input type="submit" id="submitButton" value="Submit" />
+          <input type="submit" id="cancelButton" value="Cancel" />
+        </form>
+      </div>
       <div id="LinksList"></div>
     </div>
 
