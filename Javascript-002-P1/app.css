@@ -110,6 +110,6 @@ input[type="submit"], button {
 }
 input[type="submit"]:hover, button:hover {
 cursor: pointer;
-color:var(--main-accent)
+color:var(--main-accent);
 background-color: white;
 }
