@@ -1,11 +1,36 @@
 const linkCategory = document.querySelector("#linkCategory");
-
 const submitButton = document.querySelector("#submitButton");
-
+const addBtn = document.querySelector("addBtn");
+const cancelButton = document.querySelector("#cancelButton");
+const adddLinkPanel = document.querySelector("addLinkPanel");
 
 
 let linkCategories = [];
 let links =[];
+
+addBtn.addEventListener('click', (event) => {
+console.log('add btn clicked');
+showFormPanel();
+
+}):
+
+cancelButton.addEventListener('click', (event) => {
+event.preventDefault();
+console.log('Cancel button clicked');
+
+hideFormPanel();
+
+});
+
+console.log(addLinkPanel.classList);
+
+function showFormPanel(){
+  addLinkPanel.classList.remove('hidden');
+}
+function hideFormPanel (){
+addLinkPanel.classList.add('hidden');
+}
+
 
 linkCategory.addEventListener("keydown", function (event) {
   
@@ -56,5 +81,7 @@ submitButton.addEventListener('click', (event) =>{
 
     displayLinkCategories();
    
-    
+    // hide the addLinkPanel form
+    hideFormPanel();
+
 });
