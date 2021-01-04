@@ -12,7 +12,7 @@ addBtn.addEventListener('click', (event) => {
 console.log('add btn clicked');
 showFormPanel();
 
-}):
+});
 
 cancelButton.addEventListener('click', (event) => {
 event.preventDefault();
