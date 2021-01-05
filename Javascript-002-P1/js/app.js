@@ -1,29 +1,27 @@
 const linkCategory = document.querySelector("#linkCategory");
 const submitButton = document.querySelector("#submitButton");
-const addBtn = document.querySelector("addBtn");
+const addBtn = document.querySelector("#addBtn");
 const cancelButton = document.querySelector("#cancelButton");
-const adddLinkPanel = document.querySelector("addLinkPanel");
-const addedCategories = document.querySelector("addedCategories");
-
-const linksList = document.querySelector('#linksList');
+const adddLinkPanel = document.querySelector("#addLinkPanel");
+const addedCategories = document.querySelector("#addedCategories");
 
 
 let linkCategories = [];
 let links =[
 {
-  title: 'New Link 1',
-  url: 'url1.com',
-  categories: ['node', 'angular']
+              title: 'New Link 1',
+              url: 'url1.com',
+              categories: ['node', 'angular']
 },
 {
-  title: 'New Link 2',
-  url: 'url1.com',
-  categories: ['js', 'angular']
+              title: 'New Link 2',
+              url: 'url2.com',
+              categories: ['js', 'angular']
 },
 {
-  title: 'New Link 1',
-  url: 'url1.com',
-  categories: ['node', 'bootstrap']
+              title: 'New Link 3',
+              url: 'url3.com',
+              categories: ['node', 'bootstrap']
 }
 
 ];
@@ -44,18 +42,17 @@ hideFormPanel();
 
 });
 
-console.log(addLinkPanel.classList);
-
 function showFormPanel(){
   addLinkPanel.classList.remove('hidden');
-  clearLinkForm(); 
+  
 }
 function hideFormPanel (){
 addLinkPanel.classList.add('hidden');
+clearLinkForm(); 
 }
 
 
-linkCategory.addEventListener("keydown", function (event) {
+linkCategory.addEventListener('keydown', function (event) {
   
   
   if (event.keycode === 188) {
@@ -71,24 +68,23 @@ linkCategory.addEventListener("keydown", function (event) {
   }
 })
 function displayLinkCategories() {
-  console.log("display Link Categories");
-  addedCategories.innerHTML='';
-  for (let category of LinkCategories){
-    var categoryHTMLString = `<span class="category">${category}</span>`;
-    addedCategories.innerHTML+= categoryHTMLString;
+      console.log("Displaying Link Categories");
+      addedCategories.innerHTML='';
+      for (let category of LinkCategories){
+          var categoryHTMLString = `<span class="category">${category}</span>`;
+          addedCategories.innerHTML+= categoryHTMLString;
   }
   
 }
 
 function clearLinkForm(){
-  linkTitle.value='';
-  linkUrl.value='';
-  linkCategory.value='';
-  linkCategories=[];
-  addedCategories.innerHTML='';
+  linkTitle.value = '';
+	linkUrl.value = '';
+	linkCategory.value = '';
+	linkCategories = [];
+	addedCategories.innerHTML = '';
 }
 
-console.log(this);
 
 submitButton.addEventListener('click', (event) =>{
 
