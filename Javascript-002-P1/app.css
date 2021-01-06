@@ -74,8 +74,19 @@ color: var(--main-grey);
 #addBtn{
   font-size: 24px;
   color:var(--light-accent-color);
+}
+
+@media only screen and (max-width:786px){
+    #nav {
+      height: 100px;
+    }
+    #navContainer {
+        flex-direction: column;
+        justify-content: center;
+    }
 
 }
+
 /*---------------------------------*/
 /*Panel */
 /*---------------------------------*/
@@ -130,7 +141,17 @@ background-color: white;
 
 .link {
   position: relative;
+  }
+
+#linksList {
+  display: flex;
+  flex-wrap: wrap; 
 }
+
+.flex-item{
+   flex-basis: 100%;
+}
+
 
 .link-options {
   position:absolute;
@@ -155,4 +176,17 @@ background-color: white;
 }
 #addedCategories {
   margin-bottom: 15px;
+}
+  /*---------------------------------*/
+/*scaling for screens & for smaller screened devices */
+/*---------------------------------*/
+@media only screen and (min-width: 786px){
+  .flex-item{
+    flex-basis: 50%;
+  }
+}
+@media only screen and (min-width: 1280px){
+  .flex-item{
+    flex-basis: 33%;
+  }
 }
