@@ -2,83 +2,80 @@ const linkCategory = document.querySelector("#linkCategory");
 const submitButton = document.querySelector("#submitButton");
 const addBtn = document.querySelector("#addBtn");
 const cancelButton = document.querySelector("#cancelButton");
-const adddLinkPanel = document.querySelector("#addLinkPanel");
+const addLinkPanel = document.querySelector("#addLinkPanel");
 const addedCategories = document.querySelector("#addedCategories");
 
+let editIndex = -1;
 
 let linkCategories = [];
-let links =[
-{
-              title: 'New Link 1',
-              url: 'url1.com',
-              categories: ['node', 'angular']
-},
-{
-              title: 'New Link 2',
-              url: 'url2.com',
-              categories: ['js', 'angular']
-},
-{
-              title: 'New Link 3',
-              url: 'url3.com',
-              categories: ['node', 'bootstrap']
-}
-
+let links = [
+	{
+		title: 'New Link 1',
+		url: 'url1.com',
+		categories: ['node', 'angular']
+	},
+	{
+		title: 'New Link 2',
+		url: 'url2.com',
+		categories: ['js', 'angular']
+	},
+	{
+		title: 'New Link 3',
+		url: 'url3.com',
+		categories: ['node', 'bootstrap']
+	}
 ];
 
 displayLinks();
 
 addBtn.addEventListener('click', (event) => {
-  console.log('add btn clicked');
-  showFormPanel();
-
+	console.log("Add btn clicked");
+	showFormPanel();
 });
 
 cancelButton.addEventListener('click', (event) => {
-event.preventDefault();
-console.log('Cancel button clicked');
+	event.preventDefault();
+	console.log("Cancel button clicked");
 
-hideFormPanel();
-
+	hideFormPanel();
 });
 
-function showFormPanel(){
-  addLinkPanel.classList.remove('hidden');
-  
-}
-function hideFormPanel (){
-addLinkPanel.classList.add('hidden');
-clearLinkForm(); 
+function showFormPanel() {
+	addLinkPanel.classList.remove('hidden');
+	displayLinkCategories();
 }
 
+function hideFormPanel() {
+	addLinkPanel.classList.add('hidden');
+	clearLinkForm();
+
+}
 
 linkCategory.addEventListener('keydown', function (event) {
-  
-  
-  if (event.keycode === 188) {
-      event.preventDefault();
-    
-      linkCategories.push(linkCategory.value);
 
-      linkCategory.value='';
+	if (event.keyCode === 188) {
+		event.preventDefault();
 
-    //Display the updated catagories
-      displayLinkCategories(); 
-    
-  }
+		linkCategories.push(linkCategory.value);
+
+		linkCategory.value = '';
+
+		//Display the updated categories
+		displayLinkCategories();
+	}
 })
+
 function displayLinkCategories() {
-      console.log("Displaying Link Categories");
-      addedCategories.innerHTML='';
-      for (let category of LinkCategories){
-          var categoryHTMLString = `<span class="category">${category}</span>`;
-          addedCategories.innerHTML+= categoryHTMLString;
-  }
-  
+	console.log("Displaying Link Categories");
+	addedCategories.innerHTML = '';
+	for (let category of linkCategories) {
+		var categoryHTMLString = `<span class="category">${category}</span>`;
+		addedCategories.innerHTML += categoryHTMLString;
+	}
 }
 
-function clearLinkForm(){
-  linkTitle.value = '';
+function clearLinkForm() {
+	linkTitle.value = '';
 	linkUrl.value = '';
 	linkCategory.value = '';
 	linkCategories = [];
@@ -86,69 +83,91 @@ function clearLinkForm(){
 }
 
 
-submitButton.addEventListener('click', (event) =>{
 
-//stop form from submitting
-   event.preventDefault(); 
+submitButton.addEventListener('click', (event) => {
+	//Stop form from submitting
+	event.preventDefault();
 
+	const title = linkTitle.value;
+	const url = linkUrl.value;
+	const categories = linkCategories;
 
-  const title = linkTitle.value; 
-  const url = linkUrl.value; 
-  const categories = linkCategories;
-  
-  
-  const newLink = {
-   title,
-   url,
-   categories
+	const newLink = {
+		title,
+		url,
+		categories
+	}
+	if (editIndex === -1) {
+		//push new link to array
+		links.unshift(newLink);
+	}
+	else {
+		links[editIndex] = newLink;
+		editIndex = -1;
+	}
 
-  } 
-    // push new link to array
-    links.unshift(newLink);
+	clearLinkForm();
 
-    clearLinkForm(); 
+	displayLinkCategories();
 
-    displayLinkCategories();
-   
-    // hide the addLinkPanel form
-    hideFormPanel();
+	//hide the addLinkPanel form
+	hideFormPanel();
 
-    displayLinks();
+	displayLinks();
+
 
 });
 
-function displaylinks(){
-  linksList.innerHTML = '';
 
-  for (let link of links){
+function displayLinks() {
+	linksList.innerHTML = '';
 
-    let linkHTMLString=`
-     <div class="link panel">
+	let index = 0;
+	for (let link of links) {
+
+		let linkHTMLString = `
+		<div class="flex-item">
+			<div class="link panel">
 				<div class="link-options">
-					<button class="btn-sm">Delete</button>
-					<button class="btn-sm">Edit</button>
-
+					<button class="btn-sm" onclick="deleteLink(${index})">Delete</button>
+					<button class="btn-sm" onclick="editLink(${index})">Edit</button>
 				</div>
 				<a href="${link.url}">
-					<h1 class="header">${Link.title}</h1>
+					<h1 class="header">${link.title}</h1>
 				</a>
 				<p class="link-date">${Date.now()}</p>
-
 				<div class="categories">
-          Categories:`;
-      for(let category of link.categories){
-            linkHTMLString+=`<span class="category">${category}</span>`
-      }
+					Categories:`;
+		for (let category of link.categories) {
+			linkHTMLString += `<span class="category">${category}</span>`;
+		}
 
-      linkHTMLString+= `
-          	</div>
-			  </div>
-      `
-      ;
+		linkHTMLString += `
+					</div>
+				</div>	
+			</div>	
+			`
+			;
 
-      linksList.innerHTML +=  linkHTMLString;
+		linksList.innerHTML += linkHTMLString;
+		index++;
+	}
+}
 
+function deleteLink(index) {
+	console.log("Deleting link at index", index);
+	links.splice(index, 1);
+	displayLinks();
+}
 
-  }
+function editLink(index) {
+	console.log("Editing link at index", index);
+
+	editIndex = index;
+	linkTitle.value = links[index].title;
+	linkUrl.value = links[index].url;
+	linkCategories = links[index].categories;
+
+	showFormPanel();
 
 }
