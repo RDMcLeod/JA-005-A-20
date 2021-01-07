@@ -73,7 +73,7 @@ color: var(--main-grey);
 
 }
 
-.nav-header: :hover{
+.nav-header :hover{
      color: var (--main-accent); 
     letter-spacing: 10px;
     transform: scale (1.05);
