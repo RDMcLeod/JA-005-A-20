@@ -12,19 +12,19 @@ let editIndex = -1;
 let linkCategories = [];
 let links = [
   {
-    title: "New Link 1",
-    url: "url1.com",
-    categories: ["node", "angular"],
+    title: "Yamave Creative Inc 1",
+    url: "http;//www.yamave.com",
+    categories: ["Design", "Prototype", "Project", "Mechanical"],
   },
   {
-    title: "New Link 2",
-    url: "url2.com",
-    categories: ["js", "angular"],
+    title: "Industrial Design Society of America",
+    url: "http://www.idsa.com",
+    categories: ["Design", "IDeas", "Community", "Ideation"],
   },
   {
-    title: "New Link 3",
-    url: "url3.com",
-    categories: ["node", "bootstrap"],
+    title: "Traversy Media",
+    url: "https://www.traversymedia.com",
+    categories: ["Web Development", "Tutorials", "Courses"],
   },
 ];
 
@@ -94,6 +94,7 @@ submitButton.addEventListener("click", (event) => {
     title,
     url,
     categories,
+    date: new Date(),
   };
   if (editIndex === -1) {
     //push new link to array
@@ -128,7 +129,7 @@ function displayLinks() {
 				<a href="${link.url}">
 					<h1 class="header">${link.title}</h1>
 				</a>
-				<p class="link-date">${Date.now()}</p>
+				<p class="link-date">${formatDate(link.date)}</p>
 				<div class="categories">
 					Categories:`;
     for (let category of link.categories) {
@@ -161,4 +162,9 @@ function editLink(index) {
   linkCategories = links[index].categories;
 
   showFormPanel();
+}
+function formatdate(date) {
+  return `${"0"(date.getMonth() + 1).slice(-2)} / ${("0" + date.getDay()).slice(
+    -2
+  )} / ${date.getFullYear()}`;
 }
