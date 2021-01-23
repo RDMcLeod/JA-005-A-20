@@ -54,4 +54,6 @@
 #progressBarFull {
   height: 3.4rem;
   background-color: #56a5eb;
+  /*to show percentage cmplete*/
+  width: 0%;
 }
