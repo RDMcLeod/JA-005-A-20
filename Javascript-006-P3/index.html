@@ -31,9 +31,25 @@
             class="button searchButton"
             type="submit"
             aria-label=" Submit button"
-          ></button>
+          >
+            Search
+          </button>
         </form>
       </section>
+      <section class="results">
+        <h2 class="offscreen">Search Results</h2>
+        <div class="statsbar">
+          <div id="stats" class="stats" aria-live="assertive"
+        </div>
+        <div id="searchResults" class="searchResults"></div>
+      </section>
     </main>
+    <footer>
+      <p>
+        <span aria-hidden="true"> &lt;&lt;</span>Powered By
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+        <span aria-hidden="true">&gt;&gt;</span>
+      </p>
+    </footer>
   </body>
 </html>
