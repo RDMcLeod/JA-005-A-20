@@ -5,7 +5,7 @@
     "choice2": "<javascript>",
     "choice3": "<js>",
     "choice4": "<scripting>",
-    "answer": 1,
+    "answer": 1
   },
   {
     "question":
@@ -14,7 +14,7 @@
     "choice2": "<script name = 'xxx.js'>",
     "choice3": "<script src = 'xxx.js'>",
     "choice4": "<script file = 'xxx.js'>",
-    "answer": 3,
+    "answer": 3
   },
   {
     "Question": "How do you write 'hello world' in an alert box?",
@@ -22,6 +22,6 @@
     "choice2": "alertBox('hello world');",
     "choice3": "msg('hello world');",
     "choice4": "alert('hello world');",
-    "answer": 4,
+    "answer": 4
   }
 ]
