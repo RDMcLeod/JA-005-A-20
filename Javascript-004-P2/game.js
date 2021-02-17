@@ -12,18 +12,16 @@ let availableQuestions = [];
 
 let questions = [];
 
-fetch("questions.json").then(=> {
-console.log(res);
-return res.json();
-});
-.then(loadedQuestions => {
-console.log(loadedQuestions);
-questions = loadedQuestions;
-startGame();
-});
-
-
-
+fetch("questions.json")
+  .then((res) => {
+    console.log(res);
+    return res.json();
+  })
+  .then((loadedQuestions) => {
+    console.log(loadedQuestions);
+    questions = loadedQuestions;
+    startGame();
+  });
 
 //Constants
 const CORRECTION_BONUS = 10;
@@ -90,5 +88,3 @@ incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 };
-
-
