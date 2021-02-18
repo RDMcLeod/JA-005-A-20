@@ -21,6 +21,13 @@ fetch(
   })
   .then((loadedQuestions) => {
     console.log(loadedQuestions.results);
+    loadedQuestions.results.map((loadedQuestion) => {
+      const formattedQuestion = {
+        question: loadedQuestion.questions,
+      };
+      const answerChoices = [...loadedQuestion.incorrect_answers];
+      formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+    });
     //questions = loadedQuestions;
     //startGame();
   })
