@@ -21,15 +21,24 @@ fetch(
   })
   .then((loadedQuestions) => {
     console.log(loadedQuestions.results);
-    loadedQuestions.results.map((loadedQuestion) => {
+    questions = loadedQuestions.results.map((loadedQuestion) => {
       const formattedQuestion = {
-        question: loadedQuestion.questions,
+        question: loadedQuestion.question,
       };
       const answerChoices = [...loadedQuestion.incorrect_answers];
       formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+      answerChoices.splice(
+        formattedQuestion.answer - 1,
+        0,
+        loadedQuestion.incorrect_answer
+      );
+      answerChoices.forEach((choice, index) => {
+        formattedQuestion["choice" + (index + 1)] = choice;
+      });
+      return formattedQuestion;
     });
-    //questions = loadedQuestions;
-    //startGame();
+
+    startGame();
   })
   .catch((err) => {
     console.error(err);
