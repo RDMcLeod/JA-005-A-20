@@ -11,3 +11,31 @@ $link-color: #1a0dab;
 $link-visited-color: #609;
 $link-outine-color: #000;
 $font-stack: "Roboto", Arial, sans-serif;
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+@mixin flexColumn {
+  @extend %flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: $background-color;
+  color: $font-color;
+  width: 10vw;
+  min-height: 100vh;
+  font-family: $font-stack;
+  font-size: 22px;
+}
