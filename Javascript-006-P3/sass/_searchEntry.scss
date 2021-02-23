@@ -1,0 +1,9 @@
+.searchEntry {
+  @include flexColumn;
+  padding-top: 40px;
+
+  .logo {
+    letter-spacing: -5px;
+    font-size: 2rem;
+  }
+}
