@@ -58,3 +58,15 @@
   /*to show percentage cmplete*/
   width: 0%;
 }
+/* LOADER */
+#loader{
+  border: 1.6rem solid white;
+  border-radius: 50%;
+  border-top: 1.6rem solid #56a5eb  ;
+  
+}
+
+
+]
+
+
