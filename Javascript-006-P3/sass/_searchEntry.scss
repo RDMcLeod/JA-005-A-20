@@ -84,7 +84,14 @@
         align-items: center;
         color: $stats-color;
         border-right: thin solid $clear-button-color;
+        @include mq(768px) {
+          padding: 0 1rem;
+        }
       }
+    }
+    .searchBar:hover,
+    .searchBar:focus-within {
+      box-shadow: 0 2px 5px 2px $search-bar-border;
     }
   }
 }
