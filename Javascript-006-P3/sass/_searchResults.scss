@@ -44,6 +44,20 @@
           line-height: 1.75rem;
           margin-bottom: 00.5rem;
         }
+        a {
+          color: $link-color;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        a:visited: {
+          color: $link-visited-color;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        a :focus {
+          outline: 2px solid $link-outline-color;
+        }
       }
     }
   }
