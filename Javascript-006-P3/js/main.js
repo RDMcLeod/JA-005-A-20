@@ -17,5 +17,11 @@ const submitTheSearch = (event) => {
 
   //delete seacrh results
   //Process the search
-  //set the focus
+  processTheSearch();
+  setSearchFocus();
+};
+//Procedural
+const processTheSearch = async () => {
+  //clear the stats line
+  const searchTerm = getSearchTerm();
 };
