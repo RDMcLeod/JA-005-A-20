@@ -1,10 +1,11 @@
+import { setSearchFocus } from "./searchBar.js";
 document.addEventListener("readyStateChange", (event) => {
   if (event.target.readyState === "complete") {
     initApp();
   }
 });
 const initApp = () => {
-  //set the focus
+  setSearchFocus();
 
   //3 listeners clear text
   const form = document.getElementById("searchBar");
@@ -13,6 +14,7 @@ const initApp = () => {
 // Procedural workflow function
 const submitTheSearch = (event) => {
   event.preventDefault();
+
   //delete seacrh results
   //Process the search
   //set the focus
