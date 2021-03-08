@@ -1,5 +1,5 @@
 import { setSearchFocus } from "./searchBar.js";
-import { buildSearchResults } from "./searchResults.js";
+import { buildSearchResults, clearStatsLine } from "./searchResults.js";
 import { getSearchTerm } from "./dataFunctions.js";
 
 document.addEventListener("readyStateChange", (event) => {
@@ -25,7 +25,7 @@ const submitTheSearch = (event) => {
 };
 //Procedural
 const processTheSearch = async () => {
-  //TODO:clear the stats line
+  clearStatsLine();
   const searchTerm = getSearchTerm();
   if (searchTerm === "") return;
   const resultArray = await retieveSearchResults(searchTerm);
