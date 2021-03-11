@@ -1,5 +1,10 @@
 import { setSearchFocus } from "./searchBar.js";
-import { buildSearchResults, clearStatsLine } from "./searchResults.js";
+import {
+  deleteSearchResults,
+  buildSearchResults,
+  clearStatsLine,
+  setStatsLine,
+} from "./searchResults.js";
 import { getSearchTerm } from "./dataFunctions.js";
 
 document.addEventListener("readyStateChange", (event) => {
@@ -18,7 +23,7 @@ const initApp = () => {
 const submitTheSearch = (event) => {
   event.preventDefault();
 
-  //TODO: delete seacrh results
+  deleteSearchResults();
   //Process the search
   processTheSearch();
   setSearchFocus();
@@ -30,5 +35,5 @@ const processTheSearch = async () => {
   if (searchTerm === "") return;
   const resultArray = await retieveSearchResults(searchTerm);
   if (resultArray.length) buildSearchResults(resultArray);
-  //TODO:set stats line
+  setStatsLine(resultArray.length);
 };

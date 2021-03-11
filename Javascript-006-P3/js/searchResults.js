@@ -1,3 +1,4 @@
+export const deleteSearchResults = () => {};
 export const buildSearchResults = (resultArray) => {
   resultArray.forEach((result) => {
     const resultItem = creatResultItem(result);
@@ -53,5 +54,7 @@ export const setStatsLine = (numberofResults) => {
   const statLine = document.getElementById("stats");
   if (numberOfResults) {
     setStatLine.textContent = `Displaying ${numberOfResults} result.`;
+  } else {
+    setStatsLine.textContent = "sorry, no result.";
   }
 };
