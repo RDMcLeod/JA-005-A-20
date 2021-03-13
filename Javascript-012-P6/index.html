@@ -9,13 +9,14 @@
   <body>
     <div class="bar-container">
       <div class="bar" />
-      <!-- self closing tag above -->
     </div>
-    <button onclick="fillbar(2)">Start</button>
+
+    <button onclick="fillBar(2)">Start</button>
 
     <script>
-      function fillbar(seconds) {
-        const bar = document.querySelector("bar");
+      function fillBar(seconds) {
+        const bar = document.querySelector(".bar");
+        let atPercent = 0;
         const interval = setInterval(() => {
           bar.style.width = atPercent + "%";
           atPercent++;
