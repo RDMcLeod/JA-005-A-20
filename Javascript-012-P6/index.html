@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Progress Bar</title>
   </head>
-  <body></body>
+  <body>
+    <div class="bar-container">
+      <div class="bar" />
+      <!-- self closing tag above -->
+    </div>
+    <button onclick="fillbar(2)">Start</button>
+
+    <script>
+      function fillbar(seconds) {
+        const bar = document.querySelector("bar");
+        const interval = setInterval(() => {
+          bar.style.width = atPercent + "%";
+          atPercent++;
+          console.log("running at", atPercent);
+          if (atPercent >= 100) {
+            clearInterval(interval);
+          }
+        }, (seconds * 1000) / 100);
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: lightgrey;
+      }
+      .bar-container {
+        width: 200px;
+        height: 30px;
+        margin: "40px";
+        background-color: grey;
+      }
+      .bar {
+        background-color: green;
+        height: 100%;
+        width: 0%;
+      }
+    </style>
+  </body>
 </html>
