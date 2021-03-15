@@ -57,11 +57,12 @@ const createResultText = (result) => {
 export const clearStatsLine = () => {
   document.getElementById("stats").textContent = "";
 };
+
 export const setStatsLine = (numberofResults) => {
   const statLine = document.getElementById("stats");
   if (numberOfResults) {
-    setStatLine.textContent = `Displaying ${numberOfResults} result.`;
+    statLine.textContent = `Displaying ${numberOfResults} result.`;
   } else {
-    setStatsLine.textContent = "sorry, no result.";
+    statsLine.textContent = "sorry, no result.";
   }
 };

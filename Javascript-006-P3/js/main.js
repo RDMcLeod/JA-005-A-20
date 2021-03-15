@@ -10,7 +10,7 @@ import {
   clearStatsLine,
   setStatsLine,
 } from "./searchResults.js";
-import { getSearchTerm } from "./dataFunctions.js";
+import { getSearchTerm, retrieveSearchResults } from "./dataFunctions.js";
 
 document.addEventListener("readyStateChange", (event) => {
   if (event.target.readyState === "complete") {
