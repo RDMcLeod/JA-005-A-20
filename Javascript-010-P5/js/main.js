@@ -24,3 +24,14 @@ const refreshThePage = () => {
   //clearItemEntryField();
   //setFocusOnItemEntryField();
 };
+const clearListDisplay = () => {
+  const parenElement = document.getElementById("listItem");
+  deleteContents(parenElement);
+};
+
+const deleteContents = (parenElement) => {
+  let child = parenElement.lastElementChild;
+  while (child) {
+    parentElement.removeChild(child);
+  }
+};
