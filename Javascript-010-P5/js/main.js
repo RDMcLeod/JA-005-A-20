@@ -19,8 +19,8 @@ const initApp = () => {
   refreshThePage();
 };
 const refreshThePage = () => {
-  clearListPage();
-  //renderList
+  clearListDisplay();
+  renderList();
   //clearItemEntryField();
   //setFocusOnItemEntryField();
 };
@@ -33,5 +33,22 @@ const deleteContents = (parenElement) => {
   let child = parenElement.lastElementChild;
   while (child) {
     parentElement.removeChild(child);
+    child = parentElement.lastElementChild;
   }
+};
+
+const renderList = () => {
+  const list = toDoList.getList();
+  list.forEach((item) => {
+    buildListItem(item);
+  });
+};
+
+const buildListItem = (item) => {
+  const div = document.createElement("div");
+  div.className = "item";
+  const check = document.createElement("input");
+  check.type = "checkbox";
+  check.id = item.getId();
+  check.tabIndex = 0;
 };
