@@ -18,12 +18,14 @@ const initApp = () => {
   //refresh the page
   refreshThePage();
 };
+
 const refreshThePage = () => {
   clearListDisplay();
   renderList();
-  //clearItemEntryField();
-  //setFocusOnItemEntryField();
+  clearItemEntryField();
+  setFocusOnItemEntryField();
 };
+
 const clearListDisplay = () => {
   const parenElement = document.getElementById("listItem");
   deleteContents(parenElement);
@@ -65,5 +67,15 @@ const addClickListenerToCheckbox = (checkbox) => {
   checkbox.addEventListener("click", (event) => {
     toDoList.removeItemFromList(checkbox.id);
     // TODO: remove from persistant data
+    setTimeout(() => {
+      refreshThePage();
+    }, 1000);
   });
+};
+const clearItemEntryField = () => {
+  document.getElementById("newItem").value = "";
+};
+
+setFocusOnItemEntry = () => {
+  document.getElementById(newItem).focus();
 };
