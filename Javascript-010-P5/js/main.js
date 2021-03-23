@@ -13,6 +13,12 @@ document.addEventListener("readystatechange", (event) => {
 const initApp = () => {
   //Add listeners
 
+  const itemEntryForm = document.getElementById("itemEntryForm");
+  itemEntryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    processSubmission();
+  });
+
   // procedural
   //Load list object
   //refresh the page
@@ -78,4 +84,7 @@ const clearItemEntryField = () => {
 
 setFocusOnItemEntry = () => {
   document.getElementById(newItem).focus();
+};
+const processSubmission = () => {
+  const newEntryText = getNewEntry();
 };
