@@ -89,6 +89,7 @@ const processSubmission = () => {
   const newEntryText = getNewEntry();
   if (!newEntryText.length) return;
   const nextItemId = calcNextItemId();
+  const toDoItem = createNewItem(nextItemId, newEntryText);
 };
 const getNewEntry = () => {
   return document.getElementById("newItem").value.trim();
@@ -99,4 +100,11 @@ const calcNextItemId = () => {
   if (list.length > 0) {
     nextItemId = list[list.length - 1].getId() + 1;
   }
+  return nextItemId;
+};
+const createNewItem = (itemId, itemText) => {
+  const toDo = new toDoItem();
+  toDo.setId(itemId);
+  toDo.setItem(itemText);
+  return toDo;
 };
