@@ -87,4 +87,16 @@ setFocusOnItemEntry = () => {
 };
 const processSubmission = () => {
   const newEntryText = getNewEntry();
+  if (!newEntryText.length) return;
+  const nextItemId = calcNextItemId();
+};
+const getNewEntry = () => {
+  return document.getElementById("newItem").value.trim();
+};
+const calcNextItemId = () => {
+  let nextItemId = 1;
+  const list = toDoList.getList();
+  if (list.length > 0) {
+    nextItemId = list[list.length - 1].getId() + 1;
+  }
 };
