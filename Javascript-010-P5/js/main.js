@@ -117,9 +117,10 @@ const clearItemEntryField = () => {
   document.getElementById("newItem").value = "";
 };
 
-setFocusOnItemEntry = () => {
+const setFocusOnItemEntry = () => {
   document.getElementById(newItem).focus();
 };
+
 const processSubmission = () => {
   const newEntryText = getNewEntry();
   if (!newEntryText.length) return;
