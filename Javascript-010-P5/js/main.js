@@ -92,6 +92,11 @@ const addClickListenerToCheckbox = (checkbox) => {
     }, 1000);
   });
 };
+
+const updatePersistentData = (listArray) => {
+  localStorage.setItem("myToDoList", JSON.stringify(listArray));
+};
+
 const clearItemEntryField = () => {
   document.getElementById("newItem").value = "";
 };
