@@ -39,18 +39,15 @@ const initApp = () => {
   refreshThePage();
 };
 
-const loadListObject =() =>{
-    const storedList = localStorage.getItem("myToDoList");
-    if (typeof storedList 1=="string") return;
-    const parsedList = JSON.parse(storedList);
-    parsedList.forEach(itemObj=>{
-      const newToDoItem = createNewItem(itemObj._id, itemObj._item);
-      toDoList.addItemToList(newToDoItem);
-    })
-
-}
-
-
+const loadListObject = () => {
+  const storedList = localStorage.getItem("myToDoList");
+  if (typeof storedList !== "string") return;
+  const parsedList = JSON.parse(storedList);
+  parsedList.forEach((itemObj) => {
+    const newToDoItem = createNewItem(itemObj._id, itemObj._item);
+    toDoList.addItemToList(newToDoItem);
+  });
+};
 
 const refreshThePage = () => {
   clearListDisplay();
