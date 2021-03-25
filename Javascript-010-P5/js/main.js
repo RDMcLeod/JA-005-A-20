@@ -19,9 +19,23 @@ const initApp = () => {
     processSubmission();
   });
 
+  const clearItems = document.getElementById("clearItems");
+  clearItems.addEventListener("click", (event) => {
+    const list = toDoList.getList();
+    if (list.length) {
+      const confirmed = confirm(
+        "are you sure you want to clear the entire list?"
+      );
+      if (confirmed) {
+        toDoList.clearList();
+        //TODO: update persistant data
+        refreshThePage();
+      }
+    }
+  });
+
   // procedural
   //Load list object
-  //refresh the page
   refreshThePage();
 };
 
@@ -90,6 +104,9 @@ const processSubmission = () => {
   if (!newEntryText.length) return;
   const nextItemId = calcNextItemId();
   const toDoItem = createNewItem(nextItemId, newEntryText);
+  toDoList.addItemToList(toDoItem);
+  //TODO: update our persistant data
+  refreshThePage();
 };
 const getNewEntry = () => {
   return document.getElementById("newItem").value.trim();
@@ -103,7 +120,7 @@ const calcNextItemId = () => {
   return nextItemId;
 };
 const createNewItem = (itemId, itemText) => {
-  const toDo = new toDoItem();
+  const toDo = new ToDoItem();
   toDo.setId(itemId);
   toDo.setItem(itemText);
   return toDo;
