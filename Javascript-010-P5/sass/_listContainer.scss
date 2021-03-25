@@ -12,7 +12,7 @@
       background-color: $clear-button-color;
       padding: 0 0.1rem;
       margin: 0.5rem;
-      @include mp(768px) {
+      @include mq(768px) {
         padding: 0 0.5rem;
       }
     }
