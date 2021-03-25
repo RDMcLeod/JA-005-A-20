@@ -104,6 +104,7 @@ const addClickListenerToCheckbox = (checkbox) => {
     }, 1000);
   });
 };
+
 const getLabelText = (checkboxId) => {
   return document.getElementById(checkboxId).nextElementSibling.textContent;
 };
