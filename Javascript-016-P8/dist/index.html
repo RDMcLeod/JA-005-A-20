@@ -5,6 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
@@ -27,11 +38,22 @@
             title="Submit Location"
             aria-label="Enter Zip Code or City, State, and Country to retrieve weather conditions"
           >
-            Submit
+            <i class="fa fa-search"></i>
+            <i class="fas fa-sync fa-spin"></i>
           </button>
         </form>
       </section>
-      <section id="currentForecast" class="currentForecast"></section>
+      <a href="#curentForecast" class="skip-link">Skip to Current Conditions</a>
+      <section
+        id="currentForecast"
+        class="currentForecast"
+        role="region"
+        aria-labelledby="weatherLocation"
+      >
+        <h2 id="currentForecast__location" class="currentForecast__location">
+          Current Conditions
+        </h2>
+      </section>
       <nav id="navButtons" class="navButtons"></nav>
       <section id="dailyForecast" class="dailyForecast"></section>
     </main>
