@@ -14,6 +14,8 @@
   }
 }
 @mixin mqMaxWMinH($size, $size2) {
-    //ipad Pro w: 1024 iphone Plus 6/7/8 h: 736
-  @media only screen and (min-width: $size1) and (min-height: $size2){
+  //ipad Pro w: 1024 iphone Plus 6/7/8 h: 736
+  @media only screen and (min-width: $size1) and (min-height: $size2) {
     @content;
+  }
+}
