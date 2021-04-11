@@ -33,6 +33,17 @@
       @include mq(768px) {
         font-size: 9rem;
       }
+      .unit {
+        font-size: 1.65rem;
+        color: $fadecolor;
+        text-shadow: none;
+        position: absolute;
+        top: 55%;
+        left: 85%;
+        @include mq(768px) {
+          left: 75%;
+        }
+      }
     }
   }
 }
