@@ -103,5 +103,19 @@
         @include flexcenter;
       }
     }
+    .wind {
+      display: none;
+      grid-row: 7 / span 1;
+      grid-column: 1 / span 4;
+      padding: 0.5rem;
+      font-weight: normal;
+      color: $fadecolor;
+      @include mqMaxWMinH(1024px, 700px) {
+        @include flexcenter;
+      }
+      @include mqh(1080px) {
+        @include flexcenter;
+      }
+    }
   }
 }
