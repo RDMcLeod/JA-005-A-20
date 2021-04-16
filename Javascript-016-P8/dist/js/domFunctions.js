@@ -7,3 +7,16 @@ const animateButton = (element) => {
   element.nextElementSibling.classList.toggle("block");
   element.nextElementSibling.classList.toggle("none");
 };
+export const displayError = (headerMsg, srMsg) => {
+  updateWeatherLoactionHeader(headerMsg);
+  updateScreenReaderConfirmation(srMsg);
+};
+
+const updateWeatherLoactionHeader = (mesage) => {
+  const h1 = document.getElementById("currentForecast__location");
+  h1.textContent = message;
+};
+
+const updateScreenReaderConfirmation = (massage) => {
+  document.getElementById("confirmation").textContent = message;
+};
