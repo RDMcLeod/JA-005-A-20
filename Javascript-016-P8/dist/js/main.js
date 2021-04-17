@@ -1,5 +1,5 @@
+import { setLocationObject } from "./dataFunctions.js";
 import { addSpinner, displayError } from "./domFunctions.js";
-
 import CurrentLocation from "./CurrentLocation.js";
 const currentLoc = new CurentLocation();
 
@@ -33,5 +33,5 @@ const geoSuccess = (position) => {
     name: `Lat:${position.coords.latitude} Long:${position.coords.longitide}`,
   };
   setLocationObject(currentLoc, myCoordsObj);
-  //update data and display
+  updateDataAndDisplay(currentLoc);
 };
