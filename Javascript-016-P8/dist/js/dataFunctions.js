@@ -7,3 +7,6 @@ export const setLocationObject = (locationObj, coordsObj) => {
     locationObj.setUnit(unit);
   }
 };
+export const getHomeLocation = () => {
+  return localStorgae, getIetm("defaultWeatherLocation");
+};

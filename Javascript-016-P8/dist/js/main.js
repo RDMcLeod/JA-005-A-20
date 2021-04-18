@@ -1,4 +1,4 @@
-import { setLocationObject } from "./dataFunctions.js";
+import { setLocationObject, getHomeLocation } from "./dataFunctions.js";
 import { addSpinner, displayError } from "./domFunctions.js";
 import CurrentLocation from "./CurrentLocation.js";
 const currentLoc = new CurentLocation();
@@ -7,9 +7,12 @@ const initApp = () => {
   //add listeners
   const geoButton = document.getElementById("getLocation");
   geoButton.addEventListener("click, getGeoWeather");
+  const homeButton = document.getElementById("home");
+  homeButton.addEventListener("click, loadWeather");
 
   //setup
-  //load app
+  //load weather
+  loadWeather();
 };
 document.addEventListener("DOMContentLoaded", initApp);
 const getGeoWeather = (event) => {
@@ -35,7 +38,12 @@ const geoSuccess = (position) => {
   setLocationObject(currentLoc, myCoordsObj);
   updateDataAndDisplay(currentLoc);
 };
+const loadWeather = (event) => {
+  const savedLocation = getHomeLocation();
+  if (!savedLocation && !event) return getGeoWeather();
+};
+
 const updateDataAndDisplay = async (locationObj) => {
-  const weatherJson = await getWeatherFromCoords(locationObj);
-  if (weatherJson) updateDisplay(weatherJson, locationObj);
+  //const weatherJson = await getWeatherFromCoords(locationObj);
+  //if (weatherJson) updateDisplay(weatherJson, locationObj);
 };
