@@ -54,6 +54,17 @@ const loadWeather = (event) => {
     displayHomeLocationWeather(savedLocation);
   }
 };
+const displayHomeLocationWeather = (home) => {
+  if (typeof home === "string") {
+    const locationJson = JSON.parse(home);
+    const myCoordsObj = {
+      lat: locationJson.lat,
+      lon: locationJson.lon,
+      name: locationJson.name,
+      unit: locationJson.unit,
+    };
+  }
+};
 
 const updateDataAndDisplay = async (locationObj) => {
   //const weatherJson = await getWeatherFromCoords(locationObj);
