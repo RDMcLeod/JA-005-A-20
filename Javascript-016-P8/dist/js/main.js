@@ -1,5 +1,9 @@
 import { setLocationObject, getHomeLocation } from "./dataFunctions.js";
-import { addSpinner, displayError } from "./domFunctions.js";
+import {
+  addSpinner,
+  displayError,
+  updateSreenReaderConfirmation,
+} from "./domFunctions.js";
 import CurrentLocation from "./CurrentLocation.js";
 const currentLoc = new CurentLocation();
 
@@ -80,6 +84,9 @@ const saveLocation = () => {
       unit: currentLoc.getUnit(),
     };
     localStorage.setItem("defaultWeatherLocation", JSON.stringify(location));
+    updateSreenReaderConfirmation(
+      `Saved ${currentLoc.getName()} as home location.`
+    );
   }
 };
 
