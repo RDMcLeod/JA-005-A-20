@@ -9,6 +9,8 @@ const initApp = () => {
   geoButton.addEventListener("click, getGeoWeather");
   const homeButton = document.getElementById("home");
   homeButton.addEventListener("click, loadWeather");
+  const saveButton = document.getElementById("saveLocation");
+  saveButton.addEventListener("click", saveLocation);
 
   //setup
   //load weather
@@ -65,6 +67,10 @@ const displayHomeLocationWeather = (home) => {
     };
     setLocationObject(currentLoc, myCoordsObj);
     updateDataAndDisplay(currentLoc);
+  }
+};
+const saveLocation = () => {
+  if (currentLoc.getLat() && currentLoc.getLon()) {
   }
 };
 
