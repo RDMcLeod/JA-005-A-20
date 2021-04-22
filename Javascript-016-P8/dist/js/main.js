@@ -19,6 +19,8 @@ const initApp = () => {
   unitButton.addEventListener("click", setUnitPref);
   const refreshButton = document.getElementById("refresh");
   refreshButton.addEventListener("click", refreshWeather);
+  const locationEntry = document.getElementById("searchBar__form");
+  locationEntry.addEventListener("submit", submitNewLocation);
 
   //setup
   //load weather
@@ -98,6 +100,15 @@ const setUnitPref = () => {
   addSpinner(unitIcon);
   currentLoc.toggleUnit();
   updateDataAndDisplay(currentLoc);
+};
+const resfreshWeather = () => {
+  const refreshIcon = document.querySelector(".fa-sync-alt");
+  addSpinner(refreshIcon);
+  updateDataAndDisplay(currentLoc);
+};
+const submitNewLocation = async (event) => {
+  event.preventDefault();
+  const text = document.getElementById("searchBar__text").value;
 };
 
 const updateDataAndDisplay = async (locationObj) => {
