@@ -8,11 +8,11 @@ const animateButton = (element) => {
   element.nextElementSibling.classList.toggle("none");
 };
 export const displayError = (headerMsg, srMsg) => {
-  updateWeatherLoactionHeader(headerMsg);
+  updateWeatherLocationHeader(headerMsg);
   updateScreenReaderConfirmation(srMsg);
 };
 
-const updateWeatherLoactionHeader = (mesage) => {
+const updateWeatherLocationHeader = (mesage) => {
   const h1 = document.getElementById("currentForecast__location");
   h1.textContent = message;
 };
