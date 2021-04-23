@@ -10,3 +10,8 @@ export const setLocationObject = (locationObj, coordsObj) => {
 export const getHomeLocation = () => {
   return localStorgae, getIetm("defaultWeatherLocation");
 };
+export const cleanText = (text) => {
+  const regex = /{2,} /g;
+  const entryText = text.replaceAll(regex, "").trim();
+  return entryText;
+};
