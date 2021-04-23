@@ -109,6 +109,8 @@ const resfreshWeather = () => {
 const submitNewLocation = async (event) => {
   event.preventDefault();
   const text = document.getElementById("searchBar__text").value;
+  const entryText = cleanText(text);
+  if (!entryText.length) return;
 };
 
 const updateDataAndDisplay = async (locationObj) => {
