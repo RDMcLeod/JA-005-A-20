@@ -117,7 +117,7 @@ const submitNewLocation = async (event) => {
   if (!entryText.length) return;
   const locationIcon = document.querySelector(".fa-search");
   addSpinner(locationIcon);
-
+  const coordsData = await getCoordsFromApi(entryText, currentLoc.getUnit());
   if (coordsData.cod === 200) {
     //work with api data
     const myCoordsObj = {};

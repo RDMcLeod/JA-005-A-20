@@ -11,6 +11,11 @@ export const displayError = (headerMsg, srMsg) => {
   updateWeatherLocationHeader(headerMsg);
   updateScreenReaderConfirmation(srMsg);
 };
+export const displayApiError = (statusCode) => {
+  const properMsg = toProperCase(statusCode.message);
+  updateWeatherLocationHeader(properMsg);
+  updateScreenReaderConfirmation(`${properMsg}. Please Try Again.`);
+};
 
 const updateWeatherLocationHeader = (mesage) => {
   const h1 = document.getElementById("currentForecast__location");
