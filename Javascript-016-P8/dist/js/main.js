@@ -1,4 +1,8 @@
-import { setLocationObject, getHomeLocation } from "./dataFunctions.js";
+import {
+  setLocationObject,
+  getHomeLocation,
+  cleantext,
+} from "./dataFunctions.js";
 import {
   addSpinner,
   displayError,
@@ -111,9 +115,21 @@ const submitNewLocation = async (event) => {
   const text = document.getElementById("searchBar__text").value;
   const entryText = cleanText(text);
   if (!entryText.length) return;
+  const locationIcon = document.querySelector(".fa-search");
+  addSpinner(locationIcon);
+
+  if (coordsData.cod === 200) {
+    //work with api data
+    const myCoordsObj = {};
+    setLocationObject(currentLoc, myCoordsObj);
+    updateDataAndDisplay(currentLoc);
+  } else {
+    displayApiError(coordsData);
+  }
 };
 
 const updateDataAndDisplay = async (locationObj) => {
+  console.log(locationObj);
   //const weatherJson = await getWeatherFromCoords(locationObj);
   //if (weatherJson) updateDisplay(weatherJson, locationObj);
 };
