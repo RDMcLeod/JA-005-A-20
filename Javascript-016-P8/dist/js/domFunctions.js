@@ -21,6 +21,12 @@ const updateWeatherLocationHeader = (mesage) => {
   const h1 = document.getElementById("currentForecast__location");
   h1.textContent = message;
 };
+const toProperCase = (text) => {
+  const words = text.split("");
+  const properWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+};
 
 export const updateScreenReaderConfirmation = (massage) => {
   document.getElementById("confirmation").textContent = message;
