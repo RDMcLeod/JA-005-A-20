@@ -6,6 +6,7 @@ import {
 import {
   addSpinner,
   displayError,
+  displayApiError,
   updateSreenReaderConfirmation,
 } from "./domFunctions.js";
 import CurrentLocation from "./CurrentLocation.js";
