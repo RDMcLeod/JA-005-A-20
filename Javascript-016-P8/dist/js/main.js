@@ -26,8 +26,8 @@ const initApp = () => {
   refreshButton.addEventListener("click", refreshWeather);
   const locationEntry = document.getElementById("searchBar__form");
   locationEntry.addEventListener("submit", submitNewLocation);
-
   //setup
+  setPlaceHolderText();
   //load weather
   loadWeather();
 };
