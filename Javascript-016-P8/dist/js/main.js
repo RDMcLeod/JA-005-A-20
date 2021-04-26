@@ -4,6 +4,7 @@ import {
   cleantext,
 } from "./dataFunctions.js";
 import {
+  setPlaceHolderText,
   addSpinner,
   displayError,
   displayApiError,
