@@ -81,3 +81,20 @@ body {
   padding: 10px;
   margin: 0 20px;
 }
+.action-btn-big {
+  color: #cdc2dc;
+  font-size: 30px;
+}
+.action-btn:focus {
+  outline: 0;
+}
+.music-info {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  /*opacity: 0;*/
+  transform: translate(0%);
+}
