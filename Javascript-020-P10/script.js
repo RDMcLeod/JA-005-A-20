@@ -7,3 +7,16 @@ let isDraging = false,
   prevTranslate = 0,
   animatationID = 0,
   currentIndex = 0,
+
+slides.forEach((slide, index) => {
+  const slideImage = slide.querySelector('img')
+  slideImage.addEventListener('dragstart', (e) => e.
+  preventDefault())
+
+// Touch Events
+slide.addEventListener('touchStart', touchStart(index))
+slide.addEventListener('touchend', touchStart(index))
+// Mouse Events
+slide.addEventListener('mousedown', touchStart(index))
+
+  })
