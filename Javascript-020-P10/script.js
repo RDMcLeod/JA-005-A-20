@@ -23,3 +23,16 @@ slides.forEach((slide, index) => {
   slide.addEventListener("mouseleave", touchEnd);
   slide.addEventListener("mousemove", touchMove);
 });
+function touchStart(index) {
+  return function (event) {
+    isDragging = true;
+  };
+}
+function touchEnd() {
+  isDragging = false;
+}
+function touchMove() {
+  if (isDragging) {
+    console.log("move");
+  }
+}
