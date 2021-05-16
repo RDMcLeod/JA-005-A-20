@@ -35,8 +35,12 @@ function touchStart(index) {
     currentIndex = index;
     startPos = getPositionX(event);
     isDragging = true;
+
+    // https://css-tricks.com/using-requestanimationframe/
+    animationID = requestAnimationFrame(animation);
   };
 }
+
 function touchEnd() {
   isDragging = false;
 }
@@ -47,4 +51,8 @@ function touchMove() {
 }
 function getPositionX(event) {
   return event.type.include("mouse") ? event.pageX : event.touches[0].clientX;
+}
+function anaimation() {
+  slider.getElementsByClassName.transform = `translateX(${currentTranslate}px)`;
+  if (isDragging) requestAnimationFrame(animation);
 }
