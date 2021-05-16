@@ -23,8 +23,17 @@ slides.forEach((slide, index) => {
   slide.addEventListener("mouseleave", touchEnd);
   slide.addEventListener("mousemove", touchMove);
 });
+// Disable context menu
+window.oncontextmenu = function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
+};
+
 function touchStart(index) {
   return function (event) {
+    currentIndex = index;
+    startPos = event.type.include("mouse");
     isDragging = true;
   };
 }
