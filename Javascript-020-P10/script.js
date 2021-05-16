@@ -33,7 +33,7 @@ window.oncontextmenu = function (event) {
 function touchStart(index) {
   return function (event) {
     currentIndex = index;
-    startPos = event.type.include("mouse");
+    startPos = getPositionX(event);
     isDragging = true;
   };
 }
@@ -44,4 +44,7 @@ function touchMove() {
   if (isDragging) {
     console.log("move");
   }
+}
+function getPositionX(event) {
+  return event.type.include("mouse") ? event.pageX : event.touches[0].clientX;
 }
