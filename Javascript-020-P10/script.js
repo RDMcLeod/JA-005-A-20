@@ -46,7 +46,10 @@ function touchEnd() {
   isDragging = false;
   cancelAnimationFrame(animationId);
 
-  slider.classList.remove("grabbing");
+  const movedBy = currentTranslate - prevTranslate;
+
+  if (movedBy < -100 && currentIndex < slides.length - 1)
+    slider.classList.remove("grabbing");
 }
 function touchMove(event) {
   if (isDragging) {
