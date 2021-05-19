@@ -38,15 +38,20 @@ function touchStart(index) {
 
     // https://css-tricks.com/using-requestanimationframe/
     animationID = requestAnimationFrame(animation);
+    slider.classList.add("grabbing");
   };
 }
 
 function touchEnd() {
   isDragging = false;
+  cancelAnimationFrame(animationId);
+
+  slider.classList.remove("grabbing");
 }
 function touchMove(event) {
   if (isDragging) {
-    const currentPosition = getPosition(event);
+    const currentPosition = getPositionX(event);
+    curentTranslate = prevTranslate + currentPosition - startPos;
   }
 }
 function getPositionX(event) {
