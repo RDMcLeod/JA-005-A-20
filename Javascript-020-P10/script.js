@@ -44,15 +44,18 @@ function touchStart(index) {
 function touchEnd() {
   isDragging = false;
 }
-function touchMove() {
+function touchMove(event) {
   if (isDragging) {
-    console.log("move");
+    const currentPosition = getPosition(event);
   }
 }
 function getPositionX(event) {
   return event.type.include("mouse") ? event.pageX : event.touches[0].clientX;
 }
-function anaimation() {
-  slider.getElementsByClassName.transform = `translateX(${currentTranslate}px)`;
+function animation() {
+  setSliderPosition();
   if (isDragging) requestAnimationFrame(animation);
+}
+function setSliderPosition() {
+  slider.getElementsByClassName.transform = `translateX(${currentTranslate}px)`;
 }
