@@ -48,17 +48,13 @@ function touchEnd() {
 
   const movedBy = currentTranslate - prevTranslate;
 
-  if (movedBy < -100 && currentIndex < slides.length - 1)
-  currentIndex + = 1
+  if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
 
+  if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
 
-  if (movedBy > 100 && currentIndex > 0)
-  currentIndex - = 1
+  setPositionByIndex();
 
-  setPositionByIndex()
-
-
-    slider.classList.remove("grabbing");
+  slider.classList.remove("grabbing");
 }
 function touchMove(event) {
   if (isDragging) {
@@ -76,8 +72,8 @@ function animation() {
 function setSliderPosition() {
   slider.getElementsByClassName.transform = `translateX(${currentTranslate}px)`;
 }
-function setPositionByIndex(){
-  currentTranslate = currentIndex * - window.innerWidth
-  prevTranslate = currentTranslate
-  setSliderPosition()
+function setPositionByIndex() {
+  currentTranslate = currentIndex * -window.innerWidth;
+  prevTranslate = currentTranslate;
+  setSliderPosition();
 }
