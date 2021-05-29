@@ -10,3 +10,9 @@ const initApp = () => {
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
+
+const clearSuggestions = () => {
+  const display = document.getElementById("suggestionSection");
+  if (!display.classList.contains("hidden")) display.classList.toggle("hidden");
+  const list = document.querySelector(".suggestionSection ol");
+};
