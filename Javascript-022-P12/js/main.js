@@ -4,7 +4,8 @@ const initApp = () => {
   document.getElementById("submitForm").addEventListener("submit", (event) => {
     event.preventDefault();
     clearSuggestions();
-    // generate names
+    const namesArray = generateNames();
+    console.log(namesArray);
     // display names
   });
 };
@@ -27,8 +28,17 @@ const generateNames = () => {
     randomNumArr.push(randomNumber);
     i++;
   }
+  console.log(randomNumArr); // 6 4 8 0
   const suggestion1 = namesOne[randomNumArr[0]] + namesTwo[randomNumArr[3]];
   const suggestion1 = namesOne[randomNumArr[1]] + namesTwo[randomNumArr[0]];
   const suggestion1 = namesOne[randomNumArr[2]] + namesTwo[randomNumArr[2]];
   const suggestion1 = namesOne[randomNumArr[3]] + namesTwo[randomNumArr[1]];
+
+  return [suggestion1, suggestion2, suggestion3, suggestion4];
+};
+const displayNames = (namesArray) => {
+  const list = document.querySelector(".suggestionSection ol");
+  const rawFirstName = document.getElementById(
+    "submitSection__textInput"
+  ).Value;
 };
