@@ -23,5 +23,12 @@ const generateNames = () => {
   const randomNumberArr = [];
   for (let i = 0; i < 4; ) {
     const randomNumber = Math.floor(Math.random() * 10);
+    if (randomNumArr.includes(randomNumber)) continue;
+    randomNumArr.push(randomNumber);
+    i++;
   }
+  const suggestion1 = namesOne[randomNumArr[0]] + namesTwo[randomNumArr[3]];
+  const suggestion1 = namesOne[randomNumArr[1]] + namesTwo[randomNumArr[0]];
+  const suggestion1 = namesOne[randomNumArr[2]] + namesTwo[randomNumArr[2]];
+  const suggestion1 = namesOne[randomNumArr[3]] + namesTwo[randomNumArr[1]];
 };
