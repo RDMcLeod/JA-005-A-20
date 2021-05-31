@@ -46,7 +46,7 @@ const displayNames = (namesArray) => {
       <a href="https://youtube.com/${name}" target="_blank">${name}</a><li>`;
     list.innerHTML += `<ul>
       <li><a href = "https://youtube.com/${firstName}s${name}" target="_blank">${firstName}s${name}</a><li>
-      <li><a href = "https://youtube.com/${name}with${firstName}" target="_blank">${firstName}s${name}</a><li>
+      <li><a href = "https://youtube.com/${name}With${firstName}" target="_blank">${name}With${firstName}</a><li>
       </ul>`;
   });
 };
