@@ -41,4 +41,12 @@ const displayNames = (namesArray) => {
   const rawFirstName = document.getElementById(
     "submitSection__textInput"
   ).Value;
+  namesArray.forEach((name) => {
+    list.innerHTML = `<li>
+      <a href="https://youtube.com/${name}" target="_blank">${name}</a><li>`;
+    list.innerHTML += `<ul>
+      <li><a href = "https://youtube.com/${firstName}s${name}" target="_blank">${firstName}s${name}</a><li>
+      <li><a href = "https://youtube.com/${name}with${firstName}" target="_blank">${firstName}s${name}</a><li>
+      </ul>`;
+  });
 };
