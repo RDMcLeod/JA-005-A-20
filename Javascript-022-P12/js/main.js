@@ -49,4 +49,6 @@ const displayNames = (namesArray) => {
       <li><a href = "https://youtube.com/${name}With${firstName}" target="_blank">${name}With${firstName}</a><li>
       </ul>`;
   });
+  const display = document.getElementById("suggestionSection");
+  if (display.classList.contains("hidden")) display.classList.toggle("hidden");
 };
