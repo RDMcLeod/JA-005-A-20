@@ -53,3 +53,8 @@ const displayNames = (namesArray) => {
   const display = document.getElementById("suggestionSection");
   if (display.classList.contains("hidden")) display.classList.toggle("hidden");
 };
+
+const sanitizeInput = (inputValue) => {
+  const div = document.createElement("div");
+  div.textContent = inputValue;
+};
