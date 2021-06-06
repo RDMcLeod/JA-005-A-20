@@ -29,4 +29,15 @@ main {
 header {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+header i {
+  font-size: 5rem;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  display: block;
 }
