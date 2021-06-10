@@ -123,13 +123,20 @@ const submitNewLocation = async (event) => {
   const coordsData = await getCoordsFromApi(entryText, currentLoc.getUnit());
   if (coordsData) {
     if (coordsData.cod === 200) {
-      //work with api data
-      const myCoordsObj = {};
+      const myCoordsObj = {
+        lat: coordsData.coord.lat,
+        lon: coordsData.coord.lon,
+        name: coordsData.sys.country
+          ? `${coordsData.name}, ${coordsData.sys.country}`
+          : coordsData.name,
+      };
       setLocationObject(currentLoc, myCoordsObj);
       updateDataAndDisplay(currentLoc);
     } else {
       displayApiError(coordsData);
     }
+  } else {
+    displayError("Connection Error", "Connection Error");
   }
 };
 
