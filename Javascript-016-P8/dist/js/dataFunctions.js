@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = '';
+const WEATHER_API_KEY = ""; // insert weather API key when subscribed
 
 export const setLocationObject = (locationObj, coordsObj) => {
   const { lat, lon, name, unit } = coordsObj;
@@ -18,14 +18,17 @@ export const getCoordsFromApi = async (entryText, units) => {
   const flag = regex.test(entryText) ? "zip" : "q";
   const url = `https://api.openweathermap.org/data/2.5/weather?${flag}=${entryText}&units=${units}&appid=${WEATHER_API_KEY}`;
   const encodedUrl = encodeURI(url);
-
-
-export const getWeatherFromCoords = async (locationObj) => {
-  
-
+  try {
+    const dataStream = await fetch(encodedUrl);
+    const jsonData = await dataStream.json();
+    return jsonData;
+  } catch (err) {
+    console.error(err.stack);
+  }
+};
 
 export const cleanText = (text) => {
   const regex = /{2,} /g;
   const entryText = text.replaceAll(regex, "").trim();
   return entryText;
-}
+};
