@@ -1,7 +1,8 @@
 import {
   setLocationObject,
   getHomeLocation,
-  cleantext,
+  getCoordsFromApi,
+  cleanText,
 } from "./dataFunctions.js";
 import {
   setPlaceHolderText,
@@ -120,13 +121,15 @@ const submitNewLocation = async (event) => {
   const locationIcon = document.querySelector(".fa-search");
   addSpinner(locationIcon);
   const coordsData = await getCoordsFromApi(entryText, currentLoc.getUnit());
-  if (coordsData.cod === 200) {
-    //work with api data
-    const myCoordsObj = {};
-    setLocationObject(currentLoc, myCoordsObj);
-    updateDataAndDisplay(currentLoc);
-  } else {
-    displayApiError(coordsData);
+  if (coordsData) {
+    if (coordsData.cod === 200) {
+      //work with api data
+      const myCoordsObj = {};
+      setLocationObject(currentLoc, myCoordsObj);
+      updateDataAndDisplay(currentLoc);
+    } else {
+      displayApiError(coordsData);
+    }
   }
 };
 
