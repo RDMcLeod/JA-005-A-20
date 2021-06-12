@@ -1,6 +1,7 @@
 import {
   setLocationObject,
   getHomeLocation,
+  getWeatherFromCoords,
   getCoordsFromApi,
   cleanText,
 } from "./dataFunctions.js";
