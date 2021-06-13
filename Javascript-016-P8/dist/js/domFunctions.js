@@ -62,4 +62,12 @@ const clearDisplay = () => {
   );
   deleteContents(currentConditions);
   const sixDayForecast = document.getElementById("dailyForecast__contents");
+  deleteContents(sixDayForecast);
+};
+const deleteContents = (parentElement) => {
+  let child = parentElement.lastElementChild;
+  while (child) {
+    parentElement.removeChild(child);
+    child = parentElement.lastElementChild;
+  }
 };
