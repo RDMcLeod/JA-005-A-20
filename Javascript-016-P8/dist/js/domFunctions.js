@@ -48,4 +48,7 @@ const fadeDisplay = () => {
   const cc = document.getElementById("currentForecast");
   cc.classList.toggle("zero-vis");
   cc.classList.toggle("fade-in");
+  const sixDay = document.getElementById("dailyForecast");
+  sixDay.classList.toggle("zero-vis");
+  sixDay.classList.toggle("fade-in");
 };
