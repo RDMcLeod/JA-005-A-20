@@ -39,3 +39,13 @@ const toProperCase = (text) => {
 export const updateScreenReaderConfirmation = (massage) => {
   document.getElementById("confirmation").textContent = message;
 };
+
+export const updateDisplay = (weatherJson, locationObj) => {
+  fadeDisplay();
+};
+
+const fadeDisplay = () => {
+  const cc = document.getElementById("currentForecast");
+  cc.classList.toggle("zero-vis");
+  cc.classList.toggle("fade-in");
+};

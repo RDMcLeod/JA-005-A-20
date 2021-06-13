@@ -144,5 +144,5 @@ const submitNewLocation = async (event) => {
 const updateDataAndDisplay = async (locationObj) => {
   const weatherJson = await getWeatherFromCoords(locationObj);
   consile.log(weatherJson);
-  //if (weatherJson) updateDisplay(weatherJson, locationObj);
+  if (weatherJson) updateDisplay(weatherJson, locationObj);
 };
