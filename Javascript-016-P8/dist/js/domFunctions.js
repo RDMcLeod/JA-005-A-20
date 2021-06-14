@@ -43,6 +43,7 @@ export const updateScreenReaderConfirmation = (massage) => {
 export const updateDisplay = (weatherJson, locationObj) => {
   fadeDisplay();
   clearDisplay();
+  const weatherClass = getWeatherClass(weatherJson.current.weather[0].icon);
 
   fadeDisplay();
 };
@@ -69,5 +70,20 @@ const deleteContents = (parentElement) => {
   while (child) {
     parentElement.removeChild(child);
     child = parentElement.lastElementChild;
+  }
+};
+const getWeatherClass = (icon) => {
+  const firstTwoChars = icon.slice(0, 2);
+  const lastChar = icon.slice(2);
+  const weatherLookup = {
+    "09": "snow",
+    10: "rain",
+    11: "rain",
+    13: "snow",
+    50: "fog",
+  };
+  let weatherClass;
+  if (weatherLookup[firstTwoChars]) {
+    weatherClass = weatherLookup[firstTwoChars];
   }
 };
