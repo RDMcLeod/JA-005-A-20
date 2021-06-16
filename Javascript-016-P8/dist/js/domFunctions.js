@@ -44,6 +44,7 @@ export const updateDisplay = (weatherJson, locationObj) => {
   fadeDisplay();
   clearDisplay();
   const weatherClass = getWeatherClass(weatherJson.current.weather[0].icon);
+  setBGImage(weatherClass);
 
   fadeDisplay();
 };
@@ -85,5 +86,13 @@ const getWeatherClass = (icon) => {
   let weatherClass;
   if (weatherLookup[firstTwoChars]) {
     weatherClass = weatherLookup[firstTwoChars];
+  } else if (lastChar === "d") {
+    weatherClass = "clouds";
+  } else {
+    weatherClass = "night";
   }
+  return weatherClass;
+};
+const setBGImage = (weatherClass) => {
+  document.documentElement.classList.add(weatherClass);
 };
