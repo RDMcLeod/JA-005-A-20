@@ -45,6 +45,10 @@ export const updateDisplay = (weatherJson, locationObj) => {
   clearDisplay();
   const weatherClass = getWeatherClass(weatherJson.current.weather[0].icon);
   setBGImage(weatherClass);
+  const screenReaderWeather = buildScreenReaderWeather(
+    weatherJson,
+    locationObj
+  );
 
   fadeDisplay();
 };
@@ -95,4 +99,7 @@ const getWeatherClass = (icon) => {
 };
 const setBGImage = (weatherClass) => {
   document.documentElement.classList.add(weatherClass);
+  document.documentElement.classList.forEach((img) => {
+    if (img !== weatherClass) document.documentElement.classList.remove(img);
+  });
 };
