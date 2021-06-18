@@ -49,7 +49,11 @@ export const updateDisplay = (weatherJson, locationObj) => {
     weatherJson,
     locationObj
   );
-
+  updateScreenReaderConfirmation(screenReaderWeather);
+  updateWeatherLocationHeader(locationObj.getName());
+  //current conditions
+  //six day forecast
+  setFocusOnSearch();
   fadeDisplay();
 };
 
