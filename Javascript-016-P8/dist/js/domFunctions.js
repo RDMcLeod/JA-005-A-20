@@ -134,4 +134,8 @@ const createMainImgDiv = (icon, altText) => {
   const iconDiv = createElem("div", "icon");
   iconDiv.id = "icon";
   const faIcon = translateIconToFontAwesome(icon);
+  faIcon.ariaHidden = true;
+  faIcon.title = altText;
+  iconDiv.appendChild(faIcon);
+  return iconDiv;
 };
