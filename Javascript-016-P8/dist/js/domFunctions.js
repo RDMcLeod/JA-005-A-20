@@ -129,7 +129,10 @@ const createCurrentConditionsDivs = (weatherObj, unit) => {
     weatherObj.current.weather[0].icon,
     weatherObj.current.weather[0].description
   );
+    const temp = createElem{"div", "temp",  `${Math.round(number(weatherObj.current.temp))}°`}
 };
+
+
 const createMainImgDiv = (icon, altText) => {
   const iconDiv = createElem("div", "icon");
   iconDiv.id = "icon";
@@ -151,4 +154,5 @@ const createElem = (elemType, divClassName, divText, unit) => {
     unitDiv.textContent = unit;
     div.appendChild(unitDiv);
   }
+  return div;
 };
