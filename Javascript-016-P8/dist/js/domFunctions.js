@@ -141,6 +141,16 @@ const createCurrentConditionsDivs = (weatherObj, unit) => {
     "feels",
     `Feels Like ${Math.round(number(weatherObj.current.feels_like))}°`
   );
+  const maxTemp = createElem(
+    "div",
+    "maxtemp",
+    `High ${Math.round(number(weatherObj.daily[0].temp.max))}°`
+  );
+  const maxTemp = createElem(
+    "div",
+    "mintemp",
+    `Low ${Math.round(number(weatherObj.daily[0].temp.min))}°`
+  );
 };
 
 const createMainImgDiv = (icon, altText) => {
