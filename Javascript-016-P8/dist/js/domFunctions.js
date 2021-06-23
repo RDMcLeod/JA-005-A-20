@@ -182,3 +182,13 @@ const createElem = (elemType, divClassName, divText, unit) => {
   }
   return div;
 };
+const translateIconToFontAwesome = (icon) => {
+  const i = document.createElement("i");
+  const firstTwoChars = icon.slice(0, 2);
+  const lstChar = icon.slice(2);
+  switch (firstTwoChars) {
+    case "01":
+      if (lastChar === "d") {
+      }
+  }
+};
