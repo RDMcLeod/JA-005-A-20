@@ -196,10 +196,29 @@ const translateIconToFontAwesome = (icon) => {
       break;
     case "02":
       if (lastChar === "d") {
-        i.classList.add("far", "fa-sun");
+        i.classList.add("fas", "fa-cloud-sun");
       } else {
-        i.classList.add("far", "fa-moon");
+        i.classList.add("fas", "fa-cloud-moon");
       }
+      break;
+    case "03":
+      i.classList.add("fas", "fa-cloud");
+      break;
+    case "04":
+      i.classList.add("fas", "fa-cloud-meatball");
+      break;
+    case "09":
+      i.classList.add("fas", "fa-cloud-rain");
+      break;
+    case "10":
+      if (lastChar === "d") {
+        i.classList.add("fas", "fa-cloud-sun-rain");
+      } else {
+        i.classList.add("fas", "fa-cloud-moon-rain");
+      }
+      break;
+    case "11":
+      i.classList.add("fas", "fa-poo-storm");
       break;
   }
 };
