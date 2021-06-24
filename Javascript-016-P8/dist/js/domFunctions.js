@@ -189,6 +189,17 @@ const translateIconToFontAwesome = (icon) => {
   switch (firstTwoChars) {
     case "01":
       if (lastChar === "d") {
+        i.classList.add("far", "fa-sun");
+      } else {
+        i.classList.add("far", "fa-moon");
       }
+      break;
+    case "02":
+      if (lastChar === "d") {
+        i.classList.add("far", "fa-sun");
+      } else {
+        i.classList.add("far", "fa-moon");
+      }
+      break;
   }
 };
