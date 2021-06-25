@@ -220,5 +220,11 @@ const translateIconToFontAwesome = (icon) => {
     case "11":
       i.classList.add("fas", "fa-poo-storm");
       break;
+    case "13":
+      i.classList.add("far", "fa-snowflake");
+      break;
+    case "50":
+      i.classList.add("fas", "fa-smog");
+      break;
   }
 };
