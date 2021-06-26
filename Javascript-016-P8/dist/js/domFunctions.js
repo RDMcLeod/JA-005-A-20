@@ -236,4 +236,7 @@ const translateIconToFontAwesome = (icon) => {
 
 const displayCurrentConditions = (currentConditionsArray) => {
   const ccContainer = document.getElementById("currentForcast__conditions");
+  currentConditionsArray.forEach((cc) => {
+    ccContainer.appendChild(cc);
+  });
 };
