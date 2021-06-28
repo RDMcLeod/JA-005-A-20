@@ -74,7 +74,6 @@ export const updateDisplay = (weatherJson, locationObj) => {
     locationObj.getUnit()
   );
   displayCurrentConditions(ccArray);
-
   displaySixDayForecast(weatherJson);
   setFocusOnSearch();
   fadeDisplay();
@@ -256,4 +255,9 @@ const displayCurrentConditions = (currentConditionsArray) => {
   currentConditionsArray.forEach((cc) => {
     ccContainer.appendChild(cc);
   });
+};
+const displaySixDayForecast = (weatherJson) => {
+  for (let i = 1; i <= 6; i++) {
+    const dfArray = createDailyForcastDivs(weatherJson.daily[i]);
+  }
 };
