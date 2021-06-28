@@ -39,6 +39,8 @@ const updateWeatherLocationHeader = (mesage) => {
       mapArray[1].indexOf("-") === -1
         ? mapArray[1].slice(0, 11)
         : mapArray[1].slice(0, 12);
+
+    h1.textContent = `${lat} • ${lon}`;
   } else {
     h1.textContent = message;
   }
@@ -73,7 +75,7 @@ export const updateDisplay = (weatherJson, locationObj) => {
   );
   displayCurrentConditions(ccArray);
 
-  //six day forecast
+  displaySixDayForecast(weatherJson);
   setFocusOnSearch();
   fadeDisplay();
 };
