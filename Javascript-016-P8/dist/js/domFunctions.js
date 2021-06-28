@@ -27,6 +27,10 @@ export const displayApiError = (statusCode) => {
 const updateWeatherLocationHeader = (mesage) => {
   const h1 = document.getElementById("currentForecast__location");
   if (message.indexOf("Lat:") !== -1 && message.indexOf("Long:") !== -1) {
+    const msArray = message.split("");
+    const mapArray = msgArray.map((msg) => {
+      return msg.replace(":", ": ");
+    });
   } else {
     h1.textContent = message;
   }
