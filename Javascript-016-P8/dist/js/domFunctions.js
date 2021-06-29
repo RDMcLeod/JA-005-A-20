@@ -259,5 +259,20 @@ const displayCurrentConditions = (currentConditionsArray) => {
 const displaySixDayForecast = (weatherJson) => {
   for (let i = 1; i <= 6; i++) {
     const dfArray = createDailyForcastDivs(weatherJson.daily[i]);
+    displayDailyForecast(dfArray);
   }
+};
+const createDailyForcastDivs = (dayWeather) => {
+  const dayAbbreviationText = getDayAbbreviation(dayWeather.dt);
+  const dayAbbreviation = createElem(
+    "p",
+    "dayAbbreviation",
+    dayAbbreviationText
+  );
+};
+
+const getdayAbbreviation = (data) => {
+  const dateObj = new Date(data * 1000);
+  const utcString = dateObj.toUTCString();
+  return utcString.slice(0, 3).toUpperCase();
 };
