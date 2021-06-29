@@ -269,6 +269,15 @@ const createDailyForcastDivs = (dayWeather) => {
     "dayAbbreviation",
     dayAbbreviationText
   );
+  const dayIcon = createDailyForecastIcon(
+    dayWeather.weather[0].icon,
+    dayWeather.weather[0].description
+  );
+  const dayHigh = createElem(
+    "p",
+    "dayHigh",
+    `${Math.round(Number(dayWeather.temp.max))}`
+  );
 };
 
 const getdayAbbreviation = (data) => {
