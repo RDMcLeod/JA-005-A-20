@@ -276,7 +276,7 @@ const createDailyForcastDivs = (dayWeather) => {
   const dayHigh = createElem(
     "p",
     "dayHigh",
-    `${Math.round(Number(dayWeather.temp.max))}`
+    `${Math.round(Number(dayWeather.temp.max))}°`
   );
 };
 
@@ -284,4 +284,7 @@ const getdayAbbreviation = (data) => {
   const dateObj = new Date(data * 1000);
   const utcString = dateObj.toUTCString();
   return utcString.slice(0, 3).toUpperCase();
+};
+const createDailyForecastIcon = (icon, AltText) => {
+  const img = document.createElement("img");
 };
