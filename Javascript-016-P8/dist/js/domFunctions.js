@@ -287,4 +287,9 @@ const getdayAbbreviation = (data) => {
 };
 const createDailyForecastIcon = (icon, AltText) => {
   const img = document.createElement("img");
+  if (window.innerWidth < 768 || window.innerHeight < 1025) {
+    img.src = `https://openweathermap.org/img/wn/${icon}.png`;
+  } else {
+    img.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  }
 };
