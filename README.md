@@ -1,5 +1,7 @@
 # JS-002-A-20
 
+2021-07-06 added Javascript-026-P16 folder
+
 2021-05-25 added Javascript-024-P14 folder
 
 2021-05-17 added Javascript-022-P12 folder
