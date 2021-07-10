@@ -29,3 +29,12 @@ h1 {
     font-size: 2rem;
   }
 }
+h1:focus,
+h2:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+abbr {
+  text-decoration: none;
+}
