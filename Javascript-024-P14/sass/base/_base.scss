@@ -12,6 +12,20 @@ body {
   min-height: 100mvh;
   background-color: $bgcol;
   @include mq(768px) {
-    fonst-size: 36px;
+    font-size: 36px;
+  }
+}
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  @include mq(768px) {
+    font-size: 2rem;
   }
 }
