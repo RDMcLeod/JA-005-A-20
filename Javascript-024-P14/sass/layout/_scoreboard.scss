@@ -1,0 +1,11 @@
+.scoreboard {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  @include flexcenter;
+  flex-wrap: wrap;
+  @include mq(800px) {
+    justify-content: space-between;
+    max-width: 800px;
+  }
+}
