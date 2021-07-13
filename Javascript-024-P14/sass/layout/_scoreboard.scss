@@ -19,6 +19,25 @@
       background-color: $text-color;
       color: $bgcolor;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        margin: 0 10px;
+      }
+    }
+    .scoreboard__row {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      font-size: 1.25rem;
+
+      .scoreboard__score {
+        @include flexcenter;
+        width: 50%;
+        min-height: 2.5rem;
+        border: 2px solid $text-color;
+      }
     }
   }
 }
