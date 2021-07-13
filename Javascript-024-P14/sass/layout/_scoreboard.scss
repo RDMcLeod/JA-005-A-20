@@ -8,4 +8,17 @@
     justify-content: space-between;
     max-width: 800px;
   }
+  .scoreboard__section {
+    width: calc(100% -5px);
+    max-width: 500px;
+    @include mq(800px) {
+      max-width: 395px;
+    }
+    .scoreboard__header {
+      width: 100%;
+      background-color: $text-color;
+      color: $bgcolor;
+      display: flex;
+    }
+  }
 }
