@@ -1,0 +1,14 @@
+gameboard {
+  width: calc(100%-5px);
+  @include flexcenter;
+  justify-content: space-evenly;
+  margin-left: 5ox;
+  @include mq(375px) {
+    width: calc(100%-15px);
+    margin-left: 15px;
+  }
+  .gameboard__square {
+    width: 33.33%;
+    @include flexcenter;
+  }
+}

@@ -42,6 +42,20 @@
           min-height: 1.5rem;
         }
       }
+      .scoreboard__score:nth-child(odd) {
+        border-right: 0;
+      }
+      .scoreboard__score:focus {
+        outline: none;
+        background-color: $text-color;
+        color: $bgcolor;
+      }
+    }
+  }
+  .scoreboard__section:last-child {
+    margin-top: 10px;
+    @include mq(800px) {
+      margin-top: 0;
     }
   }
 }
