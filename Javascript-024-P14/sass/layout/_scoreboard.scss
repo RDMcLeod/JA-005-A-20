@@ -37,6 +37,10 @@
         width: 50%;
         min-height: 2.5rem;
         border: 2px solid $text-color;
+        min-height: 2.5rem;
+        @include mqMinWMaxH(768px, 1024px) {
+          min-height: 1.5rem;
+        }
       }
     }
   }
