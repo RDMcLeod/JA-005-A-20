@@ -6,4 +6,25 @@ export default class GameObj {
     this.p1Session = 0;
     this.cpSession = 0;
   }
+  getActiveStatus() {
+    return this.active;
+  }
+  startGame() {
+    this.active = true;
+  }
+  endGame() {
+    this.active = false;
+  }
+  getp1AllTime() {
+    return this.p1AllTime;
+  }
+  setP1AllTime() {
+    this.p1AllTime = number;
+  }
+  getCpAllTime() {
+    return this.cpAllTime;
+  }
+  setCpAllTime() {
+    this.cpAllTime = number;
+  }
 }
