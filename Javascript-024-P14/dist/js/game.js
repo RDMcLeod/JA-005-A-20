@@ -27,4 +27,14 @@ export default class GameObj {
   setCpAllTime() {
     this.cpAllTime = number;
   }
+  getP1Session() {
+    return this.p1Session;
+  }
+  getCpSession() {
+    return this.cpSession;
+  }
+  P1Wins() {
+    this.p1Session += 1;
+    this.p1AllTime += 1;
+  }
 }
