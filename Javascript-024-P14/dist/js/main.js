@@ -3,7 +3,7 @@ const Game = new GameObj();
 
 const initApp = () => {
   initAllTimeData();
-  //update scoreboard
+  updateScoreBoard();
   // listen for player choice
   //listen for enter key
   //listen for the play again choice
@@ -25,7 +25,16 @@ const updateScoreBoard = () => {
   cpAts.textContent = Game.getCpAllTime();
   cpAts.ariaLabel = `Computer Player One has ${Game.getCpAllTime()} all time wins.`;
 
-  const p1s = document.getElementById("p1_all_time_score");
+  const p1s = document.getElementById("p1_session_score");
   p1s.textContent = Game.getP1Session();
-  p1s.ariaLabel = `Computer Player One has ${Game.getP1Session()} all time wins.`;
+  p1s.ariaLabel = `Computer Player has ${Game.getP1Session()} wins this session.`;
+
+  const cps = document.getElementById("cp_session_score");
+  cps.textContent = Game.getCpSession();
+  cps.ariaLabel = `Computer Player has ${Game.getCpSession()} wins this session.`;
+};
+const listenForPlayerChoice = () => {
+  const p1Images = document.querySelectorAll(
+    ".playerBoard .gameboard__square img"
+  );
 };
