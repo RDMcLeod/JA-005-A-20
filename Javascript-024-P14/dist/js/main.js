@@ -20,4 +20,12 @@ const updateScoreBoard = () => {
   const p1Ats = document.getElementById("p1_all_time_score");
   p1Ats.textContent = Game.getP1AllTime();
   p1Ats.ariaLabel = `Player One has ${Game.getP1AllTime()} all time wins.`;
+
+  const cpAts = document.getElementById("cp_all_time_score");
+  cpAts.textContent = Game.getCpAllTime();
+  cpAts.ariaLabel = `Computer Player One has ${Game.getCpAllTime()} all time wins.`;
+
+  const p1s = document.getElementById("p1_all_time_score");
+  p1s.textContent = Game.getP1Session();
+  p1s.ariaLabel = `Computer Player One has ${Game.getP1Session()} all time wins.`;
 };
