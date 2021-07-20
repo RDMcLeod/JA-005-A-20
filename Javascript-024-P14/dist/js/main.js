@@ -42,6 +42,15 @@ const listenForPlayerChoice = () => {
       if (game.getActiveStatus()) return;
       Game.startGame();
       const playerChoice = event.target.parentElement.id;
+      updateP1Message(playerChoice);
+      p1Images.forEach((img) => {
+        if (img === event.target) {
+          img.parentElement.classList.add("selected");
+        } else {
+          img.parentElement.classList.add("not-selected");
+        }
+      });
+      //animation sequence
     });
   });
 };
