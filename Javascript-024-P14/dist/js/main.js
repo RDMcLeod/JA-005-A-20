@@ -37,4 +37,11 @@ const listenForPlayerChoice = () => {
   const p1Images = document.querySelectorAll(
     ".playerBoard .gameboard__square img"
   );
+  p1Images.forEach((img) => {
+    img.addEventListener("click", (event) => {
+      if (game.getActiveStatus()) return;
+      Game.startGame();
+      const playerChoice = event.target.parentElement.id;
+    });
+  });
 };
