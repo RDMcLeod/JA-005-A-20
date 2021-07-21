@@ -4,7 +4,7 @@ const Game = new GameObj();
 const initApp = () => {
   initAllTimeData();
   updateScoreBoard();
-  // listen for player choice
+  listenForPlayerChoice();
   //listen for enter key
   //listen for the play again choice
   // lock the gameboard height
@@ -54,6 +54,14 @@ const listenForPlayerChoice = () => {
     });
   });
 };
+const listeneForEnterKey = () => {
+  window.addEventListener("keydown", (event) => {
+    if (event.code === "Enter" && event.target.tagName === "IMG") {
+      event.target.click();
+    }
+  });
+};
+
 const updateP1Message = (choice) => {
   let p1msg = document.getElementById("p1msg").textContent;
   p1msg += `${choice[0].toUpperCase()}${choice.slice(1)}!`;
