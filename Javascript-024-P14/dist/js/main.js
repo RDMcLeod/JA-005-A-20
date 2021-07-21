@@ -54,3 +54,8 @@ const listenForPlayerChoice = () => {
     });
   });
 };
+const updateP1Message = (choice) => {
+  let p1msg = document.getElementById("p1msg").textContent;
+  p1msg += `${choice[0].toUpperCase()}${choice.slice(1)}!`;
+  document.getElementById("p1msg").textContent = p1msg;
+};
