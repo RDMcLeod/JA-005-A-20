@@ -6,8 +6,8 @@ const initApp = () => {
   updateScoreBoard();
   listenForPlayerChoice();
   listenForEnterKey();
-  //listen for the play again
-  // lock the gameboard height
+  listenForPlayAgain();
+  lockComputerGameBoardHeight();
   //set focus to start new game
 };
 document.addEventListener("DOMContentLoaded", initApp);
@@ -66,6 +66,13 @@ const listenForPlayAgain = () => {
     e.preventDefault();
     resetBoard(); //TODO:
   });
+};
+
+const lockComputerGameBoardHeight = () => {
+  const cpGameBoard = document.querySelector(".computerBoard .gameboard");
+  const cpGBStyles = getComputedStyle(cpGameBoard);
+  const height = cpGBStyles.getPropertyValue("height");
+  cpGameBoard.style.minHeight = height;
 };
 
 const updateP1Message = (choice) => {
