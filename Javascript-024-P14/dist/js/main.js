@@ -5,8 +5,8 @@ const initApp = () => {
   initAllTimeData();
   updateScoreBoard();
   listenForPlayerChoice();
-  //listen for enter key
-  //listen for the play again choice
+  listenForEnterKey();
+  //listen for the play again
   // lock the gameboard height
   //set focus to start new game
 };
@@ -54,11 +54,17 @@ const listenForPlayerChoice = () => {
     });
   });
 };
-const listeneForEnterKey = () => {
+const listenForEnterKey = () => {
   window.addEventListener("keydown", (event) => {
     if (event.code === "Enter" && event.target.tagName === "IMG") {
       event.target.click();
     }
+  });
+};
+const listenForPlayAgain = () => {
+  document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    resetBoard(); //TODO:
   });
 };
 
