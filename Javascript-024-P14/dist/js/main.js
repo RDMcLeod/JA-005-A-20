@@ -8,7 +8,7 @@ const initApp = () => {
   listenForEnterKey();
   listenForPlayAgain();
   lockComputerGameBoardHeight();
-  //set focus to start new game
+  document.querySelector("h1").focus();
 };
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -79,4 +79,15 @@ const updateP1Message = (choice) => {
   let p1msg = document.getElementById("p1msg").textContent;
   p1msg += `${choice[0].toUpperCase()}${choice.slice(1)}!`;
   document.getElementById("p1msg").textContent = p1msg;
+};
+const computerAnimationSequence = (playerChoice) => {
+  let interval = 1000;
+  setTimeout(() => computerChoiceAnimation("cp_rock", 1), interval);
+};
+const computerChoiceAnimation = (elementId, number) => {
+  const element = document.getElementById(elementId);
+  element.firstElementChild.remove();
+  const p = document.createElement("p");
+  p.textContent = number;
+  element.appendChild(p);
 };
