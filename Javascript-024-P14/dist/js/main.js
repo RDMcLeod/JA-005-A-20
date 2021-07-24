@@ -88,7 +88,7 @@ const computerAnimationSequence = (playerChoice) => {
     () => computerChoiceAnimation("cp_scissors", 3),
     (interval += 500)
   );
-  setTimeout(() => deleteCountdown(), (interval += 500));
+  setTimeout(() => countdownFade(), (interval += 750));
 };
 const computerChoiceAnimation = (elementId, number) => {
   const element = document.getElementById(elementId);
@@ -96,4 +96,13 @@ const computerChoiceAnimation = (elementId, number) => {
   const p = document.createElement("p");
   p.textContent = number;
   element.appendChild(p);
+};
+
+const coundownFade = () => {
+  const countdown = document.querySelectorAll(
+    ".computerBoard .gameBoard__square p"
+  );
+  countdown.forEach((el) => {
+    el.className = "fadeOut";
+  });
 };
