@@ -89,6 +89,10 @@ const computerAnimationSequence = (playerChoice) => {
     (interval += 500)
   );
   setTimeout(() => countdownFade(), (interval += 750));
+  setTimeout(() => {
+    deleteCountdown();
+    finishGameFlow(playerChoice);
+  }, (interval += 750));
 };
 const computerChoiceAnimation = (elementId, number) => {
   const element = document.getElementById(elementId);
@@ -104,5 +108,13 @@ const coundownFade = () => {
   );
   countdown.forEach((el) => {
     el.className = "fadeOut";
+  });
+};
+const deleteCountdown = () => {
+  const countdown = document.querySelectorAll(
+    ".computerBoard .gameBoard__square p"
+  );
+  countdown.forEach((el) => {
+    el.remove();
   });
 };
