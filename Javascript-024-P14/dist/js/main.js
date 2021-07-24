@@ -83,6 +83,12 @@ const updateP1Message = (choice) => {
 const computerAnimationSequence = (playerChoice) => {
   let interval = 1000;
   setTimeout(() => computerChoiceAnimation("cp_rock", 1), interval);
+  setTimeout(() => computerChoiceAnimation("cp_paper", 2), (interval += 500));
+  setTimeout(
+    () => computerChoiceAnimation("cp_scissors", 3),
+    (interval += 500)
+  );
+  setTimeout(() => deleteCountdown(), (interval += 500));
 };
 const computerChoiceAnimation = (elementId, number) => {
   const element = document.getElementById(elementId);
