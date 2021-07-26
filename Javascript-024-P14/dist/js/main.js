@@ -64,7 +64,7 @@ const listenForEnterKey = () => {
 const listenForPlayAgain = () => {
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
-    resetBoard(); //TODO:
+    resetBoard();
   });
 };
 
@@ -118,5 +118,25 @@ const deleteCountdown = () => {
   );
   countdown.forEach((el) => {
     el.remove();
+  });
+};
+const askUserToPlayAgain = () => {
+  const playAgain = document.getElementById("playAgain");
+  playAgain.classList.toggle("hidden");
+  playAgain.focus();
+};
+const resetBoard = () => {
+  const gamesSquares = document.querySelectorAll(" .gameboard div");
+  gamesSquares.forEach((el) => {
+    el.className = "gameboard__square";
+  });
+  const cpSquares = document.querySelectorAll(
+    ".computerBoard .gameBoard__square"
+  );
+  cpSquares.forEach((el) => {
+    if (el.firstElementChild) el.firstElementChild.remove();
+    if (el.id === "cp_rock") createGameImage("rock, el");
+    if (el.id === "cp_paper") createGameImage("paper, el");
+    if (el.id === "cp_scissors") createGameImage("scissors, el");
   });
 };
