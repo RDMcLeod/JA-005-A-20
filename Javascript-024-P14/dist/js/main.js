@@ -147,3 +147,9 @@ const resetBoard = () => {
   document.getElementById("playAgain").classList.toggle("hidden");
   Game.endGame();
 };
+const createGameImage = (icon, appendToElement) => {
+  const image = document.createElement("img");
+  image.src = `img/${icon}.png`;
+  image.alt = icon;
+  appendToElement.appendChild(image);
+};
