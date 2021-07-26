@@ -91,9 +91,11 @@ const computerAnimationSequence = (playerChoice) => {
   setTimeout(() => countdownFade(), (interval += 750));
   setTimeout(() => {
     deleteCountdown();
-    finishGameFlow(playerChoice);
+    //finishGameFlow(playerChoice);
   }, (interval += 750));
+  setTimeout(() => askUserToPlayAgain(), (interval += 750));
 };
+
 const computerChoiceAnimation = (elementId, number) => {
   const element = document.getElementById(elementId);
   element.firstElementChild.remove();
