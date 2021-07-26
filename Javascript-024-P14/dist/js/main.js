@@ -139,4 +139,11 @@ const resetBoard = () => {
     if (el.id === "cp_paper") createGameImage("paper, el");
     if (el.id === "cp_scissors") createGameImage("scissors, el");
   });
+  document.getElementById("p1msg").textContent = "Player One Chooses...";
+  document.getElementById("cpmsg").textContent = "Computer Chooses...";
+  const ariaResult = document.getElementById("playAgain");
+  ariaResult.ariaLabel = "Player One Chooses";
+  document.getElementById("p1msg").focus();
+  document.getElementById("playAgain").classList.toggle("hidden");
+  Game.endGame();
 };
