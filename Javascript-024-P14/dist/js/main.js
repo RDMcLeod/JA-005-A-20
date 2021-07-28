@@ -123,6 +123,7 @@ const deleteCountdown = () => {
 
 const finishGameFlow = (playerChoice) => {
   const computerChoice = getComputerChoice();
+  const winner = determineWinner(playerChoice, computerChoice);
 };
 
 const getComputerChoice = () => {
