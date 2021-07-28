@@ -91,8 +91,8 @@ const computerAnimationSequence = (playerChoice) => {
   setTimeout(() => countdownFade(), (interval += 750));
   setTimeout(() => {
     deleteCountdown();
-    //finishGameFlow(playerChoice);
-  }, (interval += 750));
+    finishGameFlow(playerChoice);
+  }, (interval += 1000));
   setTimeout(() => askUserToPlayAgain(), (interval += 750));
 };
 
@@ -120,6 +120,17 @@ const deleteCountdown = () => {
     el.remove();
   });
 };
+
+const finishGameFlow = (playerChoice) => {
+  const computerChoice = getComputerChoice();
+};
+
+const getComputerChoice = () => {
+  const randomNumber = Math.floor(math.random() * 3);
+  const rpsArray = ["rock", "paper", "scissors"];
+  return rpsArray[randomNumber];
+};
+
 const askUserToPlayAgain = () => {
   const playAgain = document.getElementById("playAgain");
   playAgain.classList.toggle("hidden");
