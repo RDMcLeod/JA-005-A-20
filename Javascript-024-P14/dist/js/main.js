@@ -132,6 +132,17 @@ const getComputerChoice = () => {
   return rpsArray[randomNumber];
 };
 
+const determineWinner = (player, computer) => {
+  if (player === computer) return "tie";
+  if (
+    (player === "rock" && computer === "paper") ||
+    (player === "paper" && computer === "scissors") ||
+    (player === "scissors" && computer === "rock")
+  )
+    return "computer";
+  return "player";
+};
+
 const askUserToPlayAgain = () => {
   const playAgain = document.getElementById("playAgain");
   playAgain.classList.toggle("hidden");
