@@ -124,6 +124,11 @@ const deleteCountdown = () => {
 const finishGameFlow = (playerChoice) => {
   const computerChoice = getComputerChoice();
   const winner = determineWinner(playerChoice, computerChoice);
+  const actionMessage = buildActionMessage(
+    winner,
+    playerChoice,
+    computerChoice
+  );
 };
 
 const getComputerChoice = () => {
