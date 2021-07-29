@@ -148,6 +148,24 @@ const determineWinner = (player, computer) => {
   return "player";
 };
 
+const buildActionMessage = (winner, playerChoice, computerChoice) => {
+  if (winner === "tie") return "tie game!";
+  if (winner === "computer") {
+    const action = getAction(computerChoice);
+    return `${properCase(computerChoice)}${action} ${properCase(
+      playerChoice
+    )}.`;
+  } else {
+    const action = getAction(playerChoice);
+    return `${properCase(playerChoice)}${action} ${properCase(
+      computerChoice
+    )}.`;
+  }
+};
+const getAction = (choice) => {
+  return choice === "rock" ? "smashes" : choice === "paper" ? "wraps" : "cuts";
+};
+
 const askUserToPlayAgain = () => {
   const playAgain = document.getElementById("playAgain");
   playAgain.classList.toggle("hidden");
