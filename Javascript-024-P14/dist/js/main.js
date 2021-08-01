@@ -77,7 +77,7 @@ const lockComputerGameBoardHeight = () => {
 
 const updateP1Message = (choice) => {
   let p1msg = document.getElementById("p1msg").textContent;
-  p1msg += `${choice[0].toUpperCase()}${choice.slice(1)}!`;
+  p1msg += `${properCase(choice)}!`;
   document.getElementById("p1msg").textContent = p1msg;
 };
 const computerAnimationSequence = (playerChoice) => {
@@ -129,6 +129,7 @@ const finishGameFlow = (playerChoice) => {
     playerChoice,
     computerChoice
   );
+  displayActionMessage(actionMessage);
 };
 
 const getComputerChoice = () => {
@@ -167,6 +168,11 @@ const getAction = (choice) => {
 };
 const properCase = (string) => {
   return `${string[0].toUpperCase()}${string.slice(1)}`;
+};
+
+const displayActionMessage = (actionMessage) => {
+  const cpmsg = document.getElementById("cpmsg");
+  cpmsg.textmsg.textContent = actionMessage;
 };
 
 const askUserToPlayAgain = () => {
