@@ -165,6 +165,9 @@ const buildActionMessage = (winner, playerChoice, computerChoice) => {
 const getAction = (choice) => {
   return choice === "rock" ? "smashes" : choice === "paper" ? "wraps" : "cuts";
 };
+const properCase = (string) => {
+  return `${string[0].toUpperCase()}${string.slice(1)}`;
+};
 
 const askUserToPlayAgain = () => {
   const playAgain = document.getElementById("playAgain");
