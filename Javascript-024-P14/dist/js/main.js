@@ -131,9 +131,8 @@ const finishGameFlow = (playerChoice) => {
   );
   displayActionMessage(actionMessage);
   updateAriaResult(actionMessage, winner);
-  //update score state
   updateScoreState(winner);
-  //update persisitant data
+  updatePersistentData(winner);
   //update scoreboard
   //update winner message
   //diaplsy computer choice
@@ -196,6 +195,13 @@ const updateAriaResult = (result, winner) => {
 const updateScoreState = (winner) => {
   if (winner === "tie") return;
   winner === "computer" ? Game.cpWins() : Game, p1Wins();
+};
+
+const updatePersistentData = (winner) => {
+  const store = winner === "computer" ? "cpAllTime" : "p1AllTime";
+  const score =
+    winner === "computer" ? Game.getCpAllTime() : Game.getP1AllTime();
+  localStorage.setItem(store, score);
 };
 
 const askUserToPlayAgain = () => {
