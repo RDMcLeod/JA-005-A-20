@@ -130,9 +130,9 @@ const finishGameFlow = (playerChoice) => {
     computerChoice
   );
   displayActionMessage(actionMessage);
-  // update aria result
   updateAriaResult(actionMessage, winner);
   //update score state
+  updateScoreState(winner);
   //update persisitant data
   //update scoreboard
   //update winner message
@@ -191,6 +191,11 @@ const updateAriaResult = (result, winner) => {
       ? "The computer is the winner."
       : "";
   ariaResult.ariaLabel = `${result} ${winMessage}Click or press enter to play again.`;
+};
+
+const updateScoreState = (winner) => {
+  if (winner === "tie") return;
+  winner === "computer" ? Game.cpWins() : Game, p1Wins();
 };
 
 const askUserToPlayAgain = () => {
