@@ -131,6 +131,7 @@ const finishGameFlow = (playerChoice) => {
   );
   displayActionMessage(actionMessage);
   // update aria result
+  updateAriaResult(actionMessage, winner);
   //update score state
   //update persisitant data
   //update scoreboard
@@ -179,6 +180,17 @@ const properCase = (string) => {
 const displayActionMessage = (actionMessage) => {
   const cpmsg = document.getElementById("cpmsg");
   cpmsg.textmsg.textContent = actionMessage;
+};
+
+const updateAriaResult = (result, winner) => {
+  const ariaResult = document.getElementById("playAgain");
+  const winMessage =
+    winner === "player"
+      ? "Congratulations, you are the winner."
+      : winner === "computer"
+      ? "The computer is the winner."
+      : "";
+  ariaResult.ariaLabel = `${result} ${winMessage}Click or press enter to play again.`;
 };
 
 const askUserToPlayAgain = () => {
