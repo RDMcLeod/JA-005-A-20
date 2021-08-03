@@ -130,6 +130,12 @@ const finishGameFlow = (playerChoice) => {
     computerChoice
   );
   displayActionMessage(actionMessage);
+  // update aria result
+  //update score state
+  //update persisitant data
+  //update scoreboard
+  //update winner message
+  //diaplsy computer choice
 };
 
 const getComputerChoice = () => {
