@@ -203,6 +203,17 @@ const updatePersistentData = (winner) => {
     winner === "computer" ? Game.getCpAllTime() : Game.getP1AllTime();
   localStorage.setItem(store, score);
 };
+const updateWinnerMessage = (winner) => {
+  if (winner === "tie") return;
+  const message = winner === "computer" ? "computer wins" : "you win";
+  const p1msg = document.getElementById("p1msg");
+  p1msg.textContent = message;
+};
+
+const displayComputerChoice = (choice) => {
+  const square = document.getElementById("cp_paper");
+  createGameImage(choice, square);
+};
 
 const askUserToPlayAgain = () => {
   const playAgain = document.getElementById("playAgain");
