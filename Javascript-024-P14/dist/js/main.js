@@ -133,9 +133,9 @@ const finishGameFlow = (playerChoice) => {
   updateAriaResult(actionMessage, winner);
   updateScoreState(winner);
   updatePersistentData(winner);
-  //update scoreboard
-  //update winner message
-  //diaplsy computer choice
+  updateScoreBoard();
+  updateWinnerMessage(winner);
+  displayComputerChoice(computerChoice);
 };
 
 const getComputerChoice = () => {
